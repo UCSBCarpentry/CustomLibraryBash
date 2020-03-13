@@ -127,10 +127,13 @@ Since we love the wildcard operator, let's run the command
 (it takes a little time to complete):
 
 ~~~~
-$ wc *.tsv
+$ wc *.csv #what about the tsv files? 
 ~~~~
 {: .bash}
 ~~~
+
+     6620    233437   3581127 ap_flights.csv 
+    
     13712    511261   3773660 2014-01-31_JA-africa.tsv
     27392   1049601   7731914 2014-01-31_JA-america.tsv
    507732  17606310 131122144 2014-01_JA.tsv
