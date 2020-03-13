@@ -63,7 +63,8 @@ $ ls -lhS
 ~~~
 {: .bash}
 ~~~
-total 139M
+total 144M
+-rw-r--r-- 1 riley staff 3.5M Mar 13 16:35 ap_flights.csv
 -rw-rw-r-- 1 riley staff 126M Jun 10  2015 2014-01_JA.tsv
 -rw-r--r-- 1 riley staff 7.4M Jan 31 18:47 2014-01-31_JA-america.tsv
 -rw-r--r-- 1 riley staff 3.6M Jan 31 18:47 2014-01-31_JA-africa.tsv
