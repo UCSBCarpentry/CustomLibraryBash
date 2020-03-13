@@ -74,10 +74,10 @@ drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
 ~~~
 {: .output}
 
-In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains
-journal article metadata, and the three `.tsv` files derived from the original
+In this episode we'll focus on the dataset `ap_flights.csv`, that contains
+journal article metadata, and the three `.tsv` files #thinking about using ABCM derived from the original
 dataset. Each of these three `.tsv` files includes all data where a keyword such
-as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
+as `africa` or `america` appears in the 'Title' field of `ap_flights.csv`.
 
 > ## CSV and TSV Files
 > CSV (Comma-separated values) is a common plain text format for storing tabular
@@ -96,7 +96,7 @@ First, let's have a look at the largest data file, using the tools we learned in
 [Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
-$ cat 2014-01_JA.tsv
+$ cat ap_flight.csv
 ~~~
 {: .bash}
 
@@ -108,18 +108,17 @@ In most data files a quick glimpse of the first few lines already tells us a lot
 about the structure of the dataset, for example the table/column headers:
 
 ~~~
-$ head -n 3 2014-01_JA.tsv
+$ head -n 3 ap_flights.csv
 ~~~
 {: .bash}
 ~~~
-File    Creator    Issue    Volume    Journal    ISSN    ID    Citation    Title    Place    Labe    Language    Publisher    Date
-History_1a-rdf.tsv  Doolittle, W. E.  1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571862 KIVA -ARIZONA- 59(1), 7-26. (1993)  A Method for Distinguishing between Prehistoric and Recent Water and Soil Control Features  xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
-History_1a-rdf.tsv  Nelson, M. C. 1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571874 KIVA -ARIZONA- 59(1), 27-48. (1993) Classic Mimbres Land Use in the Eastern Mimbres Region, Southwestern New Mexico xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
-
+holding_id,filed_by,official_flight_id,filed_by_in_catalog,filed_by_in_collection,location,special_location,scale_1,scal502000,
+1MFUSGS000S01,1MFUSGS000S01,1MFUSGS000S01,1MFUSGS000S01,4,Cut Frame (Vault),NULL,NULL,NULL,none,NULL,NULL,1980-04502001,
+311RW-M542-16PS,311RW M542 16PS,311RW M542 16PS, 311RW M542 16PS,4,Cut Frame (Vault),5064,NULL,NULL,none,NULL.NULL
 ~~~
 {: .output}
 
-In the header, we can see the common metadata fields of academic papers: `Creator`, `Issue`, `Citation`, etc.
+In the header, we can see the common metadata fields of flight ids: `holding_id`, `official_flight_id`, `filed_by`, etc.
 
 Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, and bytes.
