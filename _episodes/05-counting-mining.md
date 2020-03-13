@@ -96,7 +96,7 @@ First, let's have a look at the largest data file, using the tools we learned in
 [Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
-$ cat ap_flight.csv
+$ cat ap_flights.csv
 ~~~
 {: .bash}
 
