@@ -63,22 +63,23 @@ $ ls -lhS
 ~~~
 {: .bash}
 ~~~
-total 144M
--rw-r--r-- 1 riley staff 3.5M Mar 13 16:35 ap_flights.csv
--rw-rw-r-- 1 riley staff 126M Jun 10  2015 2014-01_JA.tsv
--rw-r--r-- 1 riley staff 7.4M Jan 31 18:47 2014-01-31_JA-america.tsv
--rw-r--r-- 1 riley staff 3.6M Jan 31 18:47 2014-01-31_JA-africa.tsv
--rw-r--r-- 1 riley staff 1.4M Jan 31 18:47 2014-02-02_JA-britain.tsv
--rw-r--r-- 1 riley staff 598K Jan 31 18:47 gulliver.txt
--rw-r--r-- 1 riley staff 583K Feb  1 22:53 33504-0.txt
-drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
+ total 6.6M
+384K -rw-r--r-- 1 kliu 1049089 384K Mar 12 16:25 000003160_01_text.json
+584K -rw-r--r-- 1 kliu 1049089 583K Mar 12 16:25 33504-0.txt
+600K -rw-r--r-- 1 kliu 1049089 598K Mar 12 16:25 829-0.txt
+   0 drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:23 airphotodata/
+4.0K drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:23 desktrackers/
+ 20K -rw-r--r-- 1 kliu 1049089  19K Mar 12 16:25 diary.html
+1.1M -rw-r--r-- 1 kliu 1049089 1.1M Mar 12 16:25 pg514.txt
+4.0M -rw-r--r-- 1 kliu 1049089 4.0M Mar 16 15:40 shell-lesson.zip
+   0 drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:35 waitz/
 ~~~
 {: .output}
 
-In this episode we'll focus on the dataset `ap_flights.csv`, that contains
-journal article metadata, and the three `.tsv` files #thinking about using ABCM derived from the original
-dataset. Each of these three `.tsv` files includes all data where a keyword such
-as `africa` or `america` appears in the 'Title' field of `ap_flights.csv`.
+In this episode we'll focus on the dataset `ap_flights.csv` inside of 
+the airphotodata directory, that contains
+journal article metadata, and the three `.csv` files inside of the waitz 
+directory.
 
 > ## CSV and TSV Files
 > CSV (Comma-separated values) is a common plain text format for storing tabular
@@ -124,7 +125,7 @@ In the header, we can see the common metadata fields of flight ids: `holding_id`
 Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, and bytes.
 Since we love the wildcard operator, let's run the command
-`wc *.tsv` to get counts for all the `.tsv` files in the current directory
+`wc *.tsv` to get counts for all the `.csv` files in the waitz directory.
 (it takes a little time to complete):
 
 ~~~~
