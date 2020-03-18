@@ -59,7 +59,7 @@ And let's just check what files are in the directory and how large they
 are with `ls -lhS`:
 
 ~~~
-$ ls -lhS
+$ ls -lhs
 ~~~
 {: .bash}
 ~~~
@@ -151,7 +151,7 @@ and automate tasks, though. We will touch upon this slightly.
 
 For now, we'll see how we can build a simple pipeline to find the shortest file
 in terms of number of lines. We start by adding the `-l` flag (this looks 
-confusing in the shell, but this is the letter 'l' not the number) to get 
+confusing in the shell, but this is a lower-case letter L, not the number one) to get 
 only the number of lines, not the number of words and bytes:
 
 ~~~~
