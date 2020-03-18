@@ -51,7 +51,7 @@ $ pwd
 ~~~
 {: .bash}
 ~~~
-/Users/riley/Desktop/shell-lesson
+/Users/kliu/Desktop/shell-lesson/data
 ~~~
 {: .output}
 
@@ -129,18 +129,15 @@ Since we love the wildcard operator, let's run the command
 (it takes a little time to complete):
 
 ~~~~
-$ wc *.csv #what about the tsv files? 
+$ wc *.csv  
 ~~~~
 {: .bash}
 ~~~
 
-     6620    233437   3581127 ap_flights.csv 
-    
-    13712    511261   3773660 2014-01-31_JA-africa.tsv
-    27392   1049601   7731914 2014-01-31_JA-america.tsv
-   507732  17606310 131122144 2014-01_JA.tsv
-     5375    196999   1453418 2014-02-02_JA-britain.tsv
-   554211  19364171 144081136 total
+  22964   91857 3065819 waitz154.csv
+  22308   89233 3316137 waitz155.csv
+  14782   59129 2114527 waitz168.csv
+  60054  240219 8496483 total
 ~~~
 {: .output}
 
@@ -153,31 +150,31 @@ speed advantage. The real power of the shell comes from being able to combine co
 and automate tasks, though. We will touch upon this slightly.
 
 For now, we'll see how we can build a simple pipeline to find the shortest file
-in terms of number of lines. We start by adding the `-l` flag to get only the
-number of lines, not the number of words and bytes:
+in terms of number of lines. We start by adding the `-l` flag (this looks 
+confusing in the shell, but this is the letter 'l' not the number) to get 
+only the number of lines, not the number of words and bytes:
 
 ~~~~
-$ wc -l *.tsv
+$ wc -l *.csv
 ~~~~
 {: .bash}
 ~~~
-    13712 2014-01-31_JA-africa.tsv
-    27392 2014-01-31_JA-america.tsv
-   507732 2014-01_JA.tsv
-     5375 2014-02-02_JA-britain.tsv
-   554211 total
+  22964 waitz154.csv
+  22308 waitz155.csv
+  14782 waitz168.csv
+  60054 total
 ~~~
 {: .output}
 
 The `wc` command itself doesn't have a flag to sort the output, but as we'll
 see, we can combine three different shell commands to get what we want.
 
-First, we have the `wc -l *.tsv` command. We will save the output from this
-command in a new file. To do that, we *redirect* the output from the command
-to a file using the ‘greater than’ sign (>), like so:
+First, we have the `wc -l *.csv` command. We will save the output from 
+this command in a new file. To do that, we *redirect* the output from the 
+command to a file using the ‘greater than’ sign (>), like so:
 
 ~~~
-$ wc -l *.tsv > lengths.txt
+$ wc -l *.csv > lengths.txt
 ~~~
 {: .bash}
 
@@ -190,11 +187,10 @@ $ cat lengths.txt
 ~~~~
 {: .bash}
 ~~~
-    13712 2014-01-31_JA-africa.tsv
-    27392 2014-01-31_JA-america.tsv
-   507732 2014-01_JA.tsv
-     5375 2014-02-02_JA-britain.tsv
-   554211 total
+  22964 waitz154.csv
+  22308 waitz155.csv
+  14782 waitz168.csv
+  60054 total
 ~~~
 {: .bash}
 
@@ -208,11 +204,10 @@ $ cat sorted-lengths.txt
 ~~~~
 {: .bash}
 ~~~
-     5375 2014-02-02_JA-britain.tsv
-    13712 2014-01-31_JA-africa.tsv
-    27392 2014-01-31_JA-america.tsv
-   507732 2014-01_JA.tsv
-   554211 total
+  14782 waitz168.csv
+  22308 waitz155.csv
+  22964 waitz154.csv
+  60054 total
 ~~~
 {: .output}
 
@@ -224,27 +219,27 @@ $ head -n 1 sorted-lengths.txt
 ~~~~
 {: .bash}
 ~~~
-     5375 2014-02-02_JA-britain.tsv
+     14782 waitz168.csv
 ~~~
 {: .output}
 
 But we're really just interested in the end result, not the intermediate
 results now stored in `lengths.txt` and `sorted-lengths.txt`. What if we could
-send the results from the first command (`wc -l *.tsv`) directly to the next
+send the results from the first command (`wc -l *.csv`) directly to the 
+next
 command (`sort -n`) and then the output from that command to `head -n 1`?
 Luckily we can, using a concept called pipes. On the command line, you make a
 pipe with the vertical bar character `|`. Let's try with one pipe first:
 
 ~~~~
-$ wc -l *.tsv | sort -n
+$ wc -l *.csv | sort -n
 ~~~~
 {: .bash}
 ~~~
-     5375 2014-02-02_JA-britain.tsv
-    13712 2014-01-31_JA-africa.tsv
-    27392 2014-01-31_JA-america.tsv
-   507732 2014-01_JA.tsv
-   554211 total
+  14782 waitz168.csv
+  22308 waitz155.csv
+  22964 waitz154.csv
+  60054 total
 ~~~
 {: .output}
 
@@ -252,11 +247,11 @@ Notice that this is exactly the same output that ended up in our `sorted-lengths
 earlier. Let's add another pipe:
 
 ~~~~
-$ wc -l *.tsv | sort -n | head -n 1
+$ wc -l *.csv | sort -n | head -n 1
 ~~~~
 {: .bash}
 ~~~
-     5375 2014-02-02_JA-britain.tsv
+      14782 waitz168.csv
 ~~~
 {: .output}
 
@@ -284,7 +279,7 @@ programming languages.
 <!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
 
 > ## Adding another pipe
-> We have our `wc -l *.tsv | sort -n | head -n 1` pipeline. What would happen
+> We have our `wc -l *.csv | sort -n | head -n 1` pipeline. What would happen
 > if you piped this into `cat`? Try it!
 >
 > > ## Solution
@@ -292,14 +287,14 @@ programming languages.
 > > the same output from
 > >
 > > ~~~
-> > $ wc -l *.tsv | sort -n | head -n 1
+> > $ wc -l *.csv | sort -n | head -n 1
 > > ~~~
 > > {: .bash}
 > >
 > > and
 > >
 > > ~~~
-> > $ wc -l *.tsv | sort -n | head -n 1 | cat
+> > $ wc -l *.csv | sort -n | head -n 1 | cat
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -309,7 +304,7 @@ programming languages.
 >To count the total lines in every `tsv` file, sort the results and then print the first line of the file we use the following:
 >
 >~~~
->wc -l *.tsv | sort -n | head -n 1
+>wc -l *.csv | sort -n | head -n 1
 >~~~
 >{: .bash}
 >
@@ -317,7 +312,7 @@ programming languages.
 >Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 >
 >~~~
->__ -w *.tsv | sort __ | ____
+>__ -w *.csv | sort __ | ____
 >~~~
 >{: .bash}
 >
@@ -325,7 +320,7 @@ programming languages.
 > >
 > > Here we use the `wc` command with the `-w` (word) flag on all `tsv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
 > >~~~
-> > wc -w *.tsv | sort -n | tail -n 11
+> > wc -w *.csv | sort -n | tail -n 11
 > >~~~
 > {: .solution}
 >{: .bash}
