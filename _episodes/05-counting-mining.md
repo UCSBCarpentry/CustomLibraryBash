@@ -398,33 +398,31 @@ programming languages.
 > > ~~~
 > > {: .output}
 > >
-> > So to print the word counts of the `.tsv` files:
+> > So to print the word counts of the `.csv` files:
 > >
 > > ~~~
-> > $ wc -w *.tsv
+> > $ wc -w *.csv
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >   511261 2014-01-31_JA-africa.tsv
-> >  1049601 2014-01-31_JA-america.tsv
-> > 17606310 2014-01_JA.tsv
-> >   196999 2014-02-02_JA-britain.tsv
-> > 19364171 total
+> >    91857 waitz154.csv
+> >    89233 waitz155.csv
+> >    59129 waitz168.csv
+> >   240219 total
 > > ~~~
 > > {: .output}
 > >
 > > And to sort the lines numerically:
 > >
 > > ~~~
-> > $ wc -w *.tsv | sort -n
+> > $ wc -w *.csv | sort -n
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >   196999 2014-02-02_JA-britain.tsv
-> >   511261 2014-01-31_JA-africa.tsv
-> >  1049601 2014-01-31_JA-america.tsv
-> > 17606310 2014-01_JA.tsv
-> > 19364171 total
+> >    59129 waitz168.csv
+> >    89233 waitz155.csv
+> >    91857 waitz154.csv
+> >   240219 total
 > > ~~~
 > > {: .output}
 > {: .solution}
