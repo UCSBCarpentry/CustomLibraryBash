@@ -103,20 +103,23 @@ above this prompt.
 
 Often we just want a quick glimpse of the first or the last part of a file to
 get an idea about what the file is about. To let us do that, the Unix shell
-provides us with the commands `head` and `tail`.
+provides us with the commands `head` and `tail`.  Let's make sure that our log files start and end at appropriate dates.
 
 ~~~
-$ head 829-0.txt
+$ head Desk_Tracker_2016.csv
 ~~~
 {: .bash}
 ~~~
-The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
+"83286","","2018-01-02 16:48:51","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83523","","2018-01-08 18:57:30","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83733","","2018-01-09 10:00:00","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83781","","2018-01-09 11:52:00","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83680","","2018-01-10 14:04:34","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83682","","2018-01-10 14:05:00","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83702","","2018-01-10 18:13:38","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83780","","2018-01-12 11:52:49","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83928","","2018-01-16 13:44:16","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
 
-
-This eBook is for the use of anyone anywhere at no cost and with
-almost no restrictions whatsoever.  You may copy it, give it away or
-re-use it under the terms of the Project Gutenberg License included
-with this eBook or online at www.gutenberg.org
 ~~~
 {: .output}
 
