@@ -93,7 +93,7 @@ traffic at service desks. But we've forgot *which* desk we exported,
 so we try the `cat` command to read the text of the first file:
 
 ~~~
-$ cat Desk_Tracker_2016.csv
+$ cat Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 
@@ -103,39 +103,44 @@ above this prompt.
 
 Often we just want a quick glimpse of the first or the last part of a file to
 get an idea about what the file is about. To let us do that, the Unix shell
-provides us with the commands `head` and `tail`.
+provides us with the commands `head` and `tail`.  Let's make sure that our log files start and end at appropriate dates.
 
 ~~~
-$ head 829-0.txt
+$ head Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 ~~~
-The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
-
-
-This eBook is for the use of anyone anywhere at no cost and with
-almost no restrictions whatsoever.  You may copy it, give it away or
-re-use it under the terms of the Project Gutenberg License included
-with this eBook or online at www.gutenberg.org
+"51530","","2017-01-03 08:02:32","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"51800","","2017-01-09 14:57:27","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"51801","","2017-01-09 14:57:47","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"52089","","2017-01-11 14:17:19","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"52209","","2017-01-12 15:23:41","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"52240","","2017-01-12 18:51:06","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"52335","","2017-01-13 15:06:25","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"52336","","2017-01-13 15:07:19","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"52337","","2017-01-13 15:07:33","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
 ~~~
 {: .output}
 
-This provides a view of the first ten lines,
-whereas `tail 829-0.txt` provides a perspective on the last ten lines:
+This provides a view of the first ten lines, or as much of the first ten 
+lines as fits the width of your teminal. whereas `tail Desk_Tracker_2017.csv` 
+provides a perspective on the last ten lines:
 
 ~~~
-$ tail 829-0.txt
+$ tail Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 ~~~
-Most people start at our Web site which has the main PG search facility:
-
-    http://www.gutenberg.org
-
-This Web site includes information about Project Gutenberg-tm,
-including how to make donations to the Project Gutenberg Literary
-Archive Foundation, how to help produce our new eBooks, and how to
-subscribe to our email newsletter to hear about new eBooks.
+"82755","","2017-12-06 15:01:28","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"82761","","2017-12-06 15:13:11","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"82887","","2017-12-07 16:00:26","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"82893","","2017-12-07 17:33:35","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"82945","","2017-12-08 13:12:59","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"82954","","2017-12-08 14:12:34","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83122","","2017-12-12 16:17:00","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interd 
+"83123","","2017-12-13 14:18:44","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83154","","2017-12-15 09:57:01","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83255","","2017-12-22 11:00:00","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
 ~~~
 {: .output}
 
