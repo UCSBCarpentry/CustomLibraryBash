@@ -51,7 +51,7 @@ $ pwd
 ~~~
 {: .bash}
 ~~~
-/Users/kliu/Desktop/shell-lesson/data
+/Users/your.username/Desktop/shell-lesson/data
 ~~~
 {: .output}
 
@@ -64,9 +64,9 @@ $ ls -lhs
 {: .bash}
 ~~~
  total 6.6M
-384K -rw-r--r-- 1 kliu 1049089 384K Mar 12 16:25 000003160_01_text.json
-584K -rw-r--r-- 1 kliu 1049089 583K Mar 12 16:25 33504-0.txt
-600K -rw-r--r-- 1 kliu 1049089 598K Mar 12 16:25 829-0.txt
+384K -rw-r--r-- 1 your.username 1049089 384K Mar 12 16:25 000003160_01_text.json
+584K -rw-r--r-- 1 your.username 583K Mar 12 16:25 33504-0.txt
+600K -rw-r--r-- 1 your.username 598K Mar 12 16:25 829-0.txt
    0 drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:23 airphotodata/
 4.0K drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:23 desktrackers/
  20K -rw-r--r-- 1 kliu 1049089  19K Mar 12 16:25 diary.html
@@ -78,8 +78,7 @@ $ ls -lhs
 
 In this episode we'll focus on the dataset `ap_flights.csv` inside of 
 the airphotodata directory, that contains
-journal article metadata, and the three `.csv` files inside of the waitz 
-directory.
+journal article metadata, and the 4`.csv Desktracker files.
 
 > ## CSV and TSV Files
 > CSV (Comma-separated values) is a common plain text format for storing tabular
@@ -125,7 +124,7 @@ In the header, we can see the common metadata fields of flight ids: `holding_id`
 Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, and bytes.
 Since we love the wildcard operator, let's run the command
-`wc *.tsv` to get counts for all the `.csv` files in the waitz directory.
+`wc *.tsv` to get counts for all the `.csv` files in the Desktrackers directory.
 (it takes a little time to complete):
 
 ~~~~
