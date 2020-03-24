@@ -398,33 +398,31 @@ programming languages.
 > > ~~~
 > > {: .output}
 > >
-> > So to print the word counts of the `.tsv` files:
+> > So to print the word counts of the `.csv` files:
 > >
 > > ~~~
-> > $ wc -w *.tsv
+> > $ wc -w *.csv
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >   511261 2014-01-31_JA-africa.tsv
-> >  1049601 2014-01-31_JA-america.tsv
-> > 17606310 2014-01_JA.tsv
-> >   196999 2014-02-02_JA-britain.tsv
-> > 19364171 total
+> >    91857 waitz154.csv
+> >    89233 waitz155.csv
+> >    59129 waitz168.csv
+> >   240219 total
 > > ~~~
 > > {: .output}
 > >
 > > And to sort the lines numerically:
 > >
 > > ~~~
-> > $ wc -w *.tsv | sort -n
+> > $ wc -w *.csv | sort -n
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >   196999 2014-02-02_JA-britain.tsv
-> >   511261 2014-01-31_JA-africa.tsv
-> >  1049601 2014-01-31_JA-america.tsv
-> > 17606310 2014-01_JA.tsv
-> > 19364171 total
+> >    59129 waitz168.csv
+> >    89233 waitz155.csv
+> >    91857 waitz154.csv
+> >   240219 total
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -450,12 +448,13 @@ $ mkdir results
 Now let's try our first search:
 
 ~~~
-$ grep 1999 *.tsv
+$ grep 1999 *.csv
 ~~~
 {: .bash}
 
-Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the
-directory. `grep` will then search these for instances of the string "1999" and
+Remember that the shell will expand `*.csv` to a list of all the `.csv` 
+files in the directory. `grep` will then search these for instances of 
+the string "1999" and
 print the matching lines.
 
 > ## Strings
@@ -463,10 +462,10 @@ print the matching lines.
 {: .callout}
 
 Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and hit enter.
+Amend `grep 1999 *.csv` to `grep -c 20 *.csv` and hit enter.
 
 ~~~
-$ grep -c 1999 *.tsv
+$ grep -c 20 *.csv
 ~~~
 {: .bash}
 ~~~
@@ -477,9 +476,9 @@ $ grep -c 1999 *.tsv
 ~~~
 {: .output}
 
-The shell now prints the number of times the string 1999 appeared in each file.
-If you look at the output from the previous command, this tends to refer to the
-date field for each journal article.
+The shell now prints the number of times the string 20 appeared in each 
+file.If you look at the output from the previous command, this tends to 
+refer to the date field when counts were made on each floor.
 
 We will try another search:
 
