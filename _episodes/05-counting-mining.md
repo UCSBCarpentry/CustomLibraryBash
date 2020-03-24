@@ -133,10 +133,11 @@ $ wc *.csv
 {: .bash}
 ~~~
 
-  22964   91857 3065819 waitz154.csv
-  22308   89233 3316137 waitz155.csv
-  14782   59129 2114527 waitz168.csv
-  60054  240219 8496483 total
+    135    2393   41429 Desk_Tracker_2016.csv
+    749   12542  224850 Desk_Tracker_2017.csv
+    661   10941  192433 Desk_Tracker_2018.csv
+    347    6691  110833 Desk_Tracker_2019.csv
+   1892   32867  569545 total
 ~~~
 {: .output}
 
@@ -158,10 +159,11 @@ $ wc -l *.csv
 ~~~~
 {: .bash}
 ~~~
-  22964 waitz154.csv
-  22308 waitz155.csv
-  14782 waitz168.csv
-  60054 total
+    135 Desk_Tracker_2016.csv
+    749 Desk_Tracker_2017.csv
+    661 Desk_Tracker_2018.csv
+    347 Desk_Tracker_2019.csv
+   1892 total
 ~~~
 {: .output}
 
@@ -186,10 +188,11 @@ $ cat lengths.txt
 ~~~~
 {: .bash}
 ~~~
-  22964 waitz154.csv
-  22308 waitz155.csv
-  14782 waitz168.csv
-  60054 total
+    135 Desk_Tracker_2016.csv
+    749 Desk_Tracker_2017.csv
+    661 Desk_Tracker_2018.csv
+    347 Desk_Tracker_2019.csv	
+   1892 total
 ~~~
 {: .bash}
 
@@ -203,10 +206,11 @@ $ cat sorted-lengths.txt
 ~~~~
 {: .bash}
 ~~~
-  14782 waitz168.csv
-  22308 waitz155.csv
-  22964 waitz154.csv
-  60054 total
+    135 Desk_Tracker_2016.csv
+    347 Desk_Tracker_2019.csv
+    661 Desk_Tracker_2018.csv
+    749 Desk_Tracker_2017.csv
+   1892 total
 ~~~
 {: .output}
 
@@ -218,7 +222,7 @@ $ head -n 1 sorted-lengths.txt
 ~~~~
 {: .bash}
 ~~~
-     14782 waitz168.csv
+     135 Desk_Tracker_2016.csv
 ~~~
 {: .output}
 
@@ -235,10 +239,11 @@ $ wc -l *.csv | sort -n
 ~~~~
 {: .bash}
 ~~~
-  14782 waitz168.csv
-  22308 waitz155.csv
-  22964 waitz154.csv
-  60054 total
+    135 Desk_Tracker_2016.csv
+    347 Desk_Tracker_2019.csv
+    661 Desk_Tracker_2018.csv
+    749 Desk_Tracker_2017
+   1892 total
 ~~~
 {: .output}
 
@@ -250,7 +255,7 @@ $ wc -l *.csv | sort -n | head -n 1
 ~~~~
 {: .bash}
 ~~~
-      14782 waitz168.csv
+     135 Desk_Tracker_2016.csv
 ~~~
 {: .output}
 
@@ -404,10 +409,11 @@ programming languages.
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >    91857 waitz154.csv
-> >    89233 waitz155.csv
-> >    59129 waitz168.csv
-> >   240219 total
+> >     2393 Desk_Tracker_2016.csv
+> >    12542 Desk_Tracker_2017.csv
+> >    10941 Desk_Tracker_2018.csv
+> >     6991 Desk_Tracker_2019.csv
+> >    32867 total
 > > ~~~
 > > {: .output}
 > >
@@ -418,10 +424,11 @@ programming languages.
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >    59129 waitz168.csv
-> >    89233 waitz155.csv
-> >    91857 waitz154.csv
-> >   240219 total
+> >     2393 Desk_Tracker_2016.csv
+> >     6991 Desk_Tracker_2019.csv
+> >    10941 Desk_Tracker_2018.csv
+> >    12542 Desk_Tracker_2017.csv
+> >    32867 total
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -447,13 +454,13 @@ $ mkdir results
 Now let's try our first search:
 
 ~~~
-$ grep 1999 *.csv
+$ grep irc *.csv
 ~~~
 {: .bash}
 
 Remember that the shell will expand `*.csv` to a list of all the `.csv` 
 files in the directory. `grep` will then search these for instances of 
-the string "1999" and
+the string "irc" and
 print the matching lines.
 
 > ## Strings
@@ -461,28 +468,28 @@ print the matching lines.
 {: .callout}
 
 Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep 1999 *.csv` to `grep -c 20 *.csv` and hit enter.
+Amend `grep irc *.csv` to `grep -c spatial *.csv` and hit enter.
 
 ~~~
-$ grep -c 20 *.csv
+$ grep -c Spatial *.csv
 ~~~
 {: .bash}
 ~~~
-2014-01-31_JA-africa.tsv:804
-2014-01-31_JA-america.tsv:1478
-2014-01_JA.tsv:28767
-2014-02-02_JA-britain.tsv:284
+Desk_Tracker_2016.csv:9
+Desk_Tracker_2017.csv:63
+Desk_Tracker_2018.csv:190
+Desk_Tracker_2019.csv:112
 ~~~
 {: .output}
 
-The shell now prints the number of times the string 20 appeared in each 
+The shell now prints the number of times the string "Spatial" appeared in each 
 file.If you look at the output from the previous command, this tends to 
 refer to the date field when counts were made on each floor.
 
 We will try another search:
 
 ~~~
-$ grep -c revolution *.tsv
+$ grep -c walk in *.tsv
 ~~~
 {: .bash}
 ~~~
