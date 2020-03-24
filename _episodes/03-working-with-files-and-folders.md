@@ -71,39 +71,34 @@ We notice that the shell completes the line to `cd firstdir/`.
 
 If you are in `firstdir`, use `cd ..` to get back to the `shell-lesson` directory.
 
-Here there are copies of two public domain books downloaded from
-[Project Gutenberg](https://www.gutenberg.org/) along with other files we will
-cover later.
+Here there are three directories containing the data we will work with 
+for the workshop.  Move into the `waitz` directory.
 
 ~~~
 $ ls -lh
 ~~~
 {: .bash}
 ~~~
-total 33M
--rw-rw-r-- 1 riley staff 383K Feb 22 2017  201403160_01_text.json
--rw-r--r-- 1 riley staff 3.6M Jan 31 2017  2014-01-31_JA-africa.tsv
--rw-r--r-- 1 riley staff 7.4M Jan 31 2017  2014-01-31_JA-america.tsv
--rw-rw-r-- 1 riley staff 125M Jun 10 2015  2014-01_JA.tsv
--rw-r--r-- 1 riley staff 1.4M Jan 31 2017  2014-02-02_JA-britain.tsv
--rw-r--r-- 1 riley staff 582K Feb  2 2017  33504-0.txt
--rw-r--r-- 1 riley staff 598K Jan 31 2017  829-0.txt
--rw-rw-r-- 1 riley staff  18K Feb 22 2017  diary.html
-drwxr-xr-x 1 riley staff  64B Feb 22 2017  firstdir
+total 1128
+-rw-r--r--@ 1 jjablonski  1964856704    40K Mar 17 15:12 Desk_Tracker_2016.csv
+-rw-r--r--@ 1 jjablonski  1964856704   220K Mar 17 15:14 Desk_Tracker_2017.csv
+-rw-r--r--@ 1 jjablonski  1964856704   188K Mar 17 15:14 Desk_Tracker_2018.csv
+-rw-r--r--@ 1 jjablonski  1964856704   108K Mar 17 15:15 Desk_Tracker_2019.csv
 ~~~
 {: .output}
 
-The files `829-0.txt` and `33504-0.txt` holds the content of book #829
-and #33504 on Project Gutenberg. But we've forgot *which* books, so
-we try the `cat` command to read the text of the first file:
+The files `Desk_Tracker_2016.csv`, and `...2017.csv`, `...2018.csv` 
+holds statistics exported from DeskTracker, the system used to track 
+traffic at service desks. But we've forgot *which* desk we exported, 
+so we try the `cat` command to read the text of the first file:
 
 ~~~
-$ cat 829-0.txt
+$ cat Desk_Tracker_2016.csv
 ~~~
 {: .bash}
 
 The terminal window erupts and the whole book cascades by (it is printed to
-your terminal), leaving us with a new prompt and the last few lines of the book
+your terminal), leaving us with a new prompt and the last few lines of the file
 above this prompt.
 
 Often we just want a quick glimpse of the first or the last part of a file to
