@@ -67,12 +67,12 @@ $ ls -lhs
 384K -rw-r--r-- 1 your.username 1049089 384K Mar 12 16:25 000003160_01_text.json
 584K -rw-r--r-- 1 your.username 583K Mar 12 16:25 33504-0.txt
 600K -rw-r--r-- 1 your.username 598K Mar 12 16:25 829-0.txt
-   0 drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:23 airphotodata/
-4.0K drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:23 desktrackers/
- 20K -rw-r--r-- 1 kliu 1049089  19K Mar 12 16:25 diary.html
-1.1M -rw-r--r-- 1 kliu 1049089 1.1M Mar 12 16:25 pg514.txt
-4.0M -rw-r--r-- 1 kliu 1049089 4.0M Mar 16 15:40 shell-lesson.zip
-   0 drwxr-xr-x 1 kliu 1049089    0 Mar 18 13:35 waitz/
+   0 drwxr-xr-x 1 your.username 1049089    0 Mar 18 13:23 airphotodata/
+4.0K drwxr-xr-x 1 your.username 1049089    0 Mar 18 13:23 desktrackers/
+ 20K -rw-r--r-- 1 your.username 1049089  19K Mar 12 16:25 diary.html
+1.1M -rw-r--r-- 1 your.username 1049089 1.1M Mar 12 16:25 pg514.txt
+4.0M -rw-r--r-- 1 your.username 1049089 4.0M Mar 16 15:40 shell-lesson.zip
+   0 drwxr-xr-x 1 your.username 1049089    0 Mar 18 13:35 waitz/
 ~~~
 {: .output}
 
@@ -489,37 +489,37 @@ refer to the date field when counts were made on each floor.
 We will try another search:
 
 ~~~
-$ grep -c walk in *.tsv
+$ grep -c In Person *.csv
 ~~~
 {: .bash}
 ~~~
-2014-01-31_JA-africa.tsv:20
-2014-01-31_JA-america.tsv:34
-2014-01_JA.tsv:867
-2014-02-02_JA-britain.tsv:9
+Desk_Tracker_2016.csv:134
+Desk_Tracker_2017.csv:748
+Desk_Tracker_2018.csv:644
+Desk_Tracker_2019.csv:343
 ~~~
 {: .output}
 
-We got back the counts of the instances of the string `revolution` within the files.
+We got back the counts of the instances of the string `Walk In` within the files.
 Now, amend the above command to the below and observe how the output of each is different:
 
 ~~~
-$ grep -ci revolution *.tsv
+$ grep -ci in person *.csv
 ~~~
 {: .bash}
-~~~
-2014-01-31_JA-africa.tsv:118
-2014-01-31_JA-america.tsv:1018
-2014-01_JA.tsv:9327
-2014-02-02_JA-britain.tsv:122
+~~
+Desk_Tracker_2016.csv:135
+Desk_Tracker_2017.csv:749
+Desk_Tracker_2018.csv:645
+Desk_Tracker_2019.csv:344
 ~~~
 {: .output}
 
 This repeats the query, but prints a case
-insensitive count (including instances of both `revolution` and `Revolution` and other variants).
-Note how the count has increased nearly 30 fold for those journal article
-titles that contain the keyword 'america'. As before, cycling back and
-adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
+insensitive count (including instances of both `in person` and `In Person` and other variants).
+Note how the count has increased for the entries
+As before, cycling back and adding `> results/`, followed by a filename (ideally in .txt format), will save the 
+results to a data file.
 
 So far we have counted strings in files and printed to the shell or to
 file those counts. But the real power of `grep` comes in that you can
@@ -527,24 +527,24 @@ also use it to create subsets of tabulated data (or indeed any data)
 from one or multiple files.  
 
 ~~~
-$ grep -i revolution *.tsv
+$ grep -i Spatial *.csv
 ~~~
 {: .bash}
 
-This script looks in the defined files and prints any lines containing `revolution`
+This script looks in the defined files and prints any lines containing `spatial`
 (without regard to case) to the shell. We let the shell add today's date to the
 filename:
 
 ~~~
-$ grep -i revolution *.tsv > results/$(date -I)_JAi-revolution.tsv
+$ grep -i spatial *.tsv > results/$(date -I)_test_tracker.csv
 ~~~
 {: .bash}
 
 This saves the subsetted data to a new file.
 
 However, if we look at this file, it contains every instance of the
-string 'revolution' including as a single word and as part of other words
-such as 'revolutionary'. This perhaps isn't as useful as we thought...
+string 'spatial' including as a single word and as part of other words
+such as 'spatially'. This perhaps isn't as useful as we thought...
 Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
