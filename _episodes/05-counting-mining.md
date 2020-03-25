@@ -536,7 +536,7 @@ This script looks in the defined files and prints any lines containing `spatial`
 filename:
 
 ~~~
-$ grep -i spatial *.tsv > results/$(date -I)i-spatial.csv
+$ grep -i spatial *.csv > results/$(date -I)i-spatial.csv
 ~~~
 {: .bash}
 
@@ -549,7 +549,7 @@ Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
 ~~~
-$ grep -iw Spatial *.tsv > results/$(date -I)iw-spatial.csv
+$ grep -iw Spatial *.csv > results/$(date -I)iw-spatial.csv
 ~~~
 {: .bash}
 
