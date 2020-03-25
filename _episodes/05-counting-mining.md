@@ -592,14 +592,14 @@ Finally, we'll use the **regular expression syntax** covered earlier to search f
 > than searching for a plain string.
 {: .callout}
 
-The regular expression'sp[ae][ct]ial will match "special", 
-"spatial", but also "spetial" and "spacial".
+The regular expression'Cont[ae][cn]t' will match "Content", "Contact", 
+but also "Contect" and "Contant".
 It's generally a good idea to enclose the expression in single quotation marks, since
 that ensures the shell sends it directly to grep without any processing (such as trying to
 expand the wildcard operator *).
 
 ~~~
-$ grep -iwE 'fr[ae]nc[eh]' *.csv
+$ grep -iwE 'Cont[ae][cn]t' *.csv
 ~~~
 {: .bash}
 
@@ -609,7 +609,7 @@ We include the `-o` flag to print only the matching part of the lines e.g.
 (handy for isolating/checking results):
 
 ~~~
-$ grep -iwEo 'fr[ae]nc[eh]' *.csv
+$ grep -iwEo 'Cont[ae][cn]t' *.csv
 ~~~
 {: .bash}
 
@@ -631,7 +631,7 @@ directory.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -w hero *.csv
+> > $ grep -w arcpro *.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -639,12 +639,12 @@ directory.
 
 > ## Case sensitive search in select files
 > Search for all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' `.csv` files in this directory.
+> the '2018' `.csv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
 > > ~~~
-> > $ grep hero *a.csv
+> > $ grep arcpro *2018.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -652,12 +652,12 @@ directory.
 
 > ## Count words (case sensitive)
 > Count all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' `.csv` files in this directory.
+> the '2019' `.csv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -c hero *a.csv
+> > $ grep -c arcpro *2019.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -669,7 +669,7 @@ directory.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -ci hero *a.csv
+> > $ grep -ci arcpro *2019.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -678,11 +678,11 @@ directory.
 > ## Case insensitive search in select files
 > Search for all case insensitive instances of that
 > word in the 'America' and 'Africa' `.csv` files in this directory. 
-Print your results to  a file `results/hero.csv`.
+Print your results to  a file `results/2019.csv`.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -i hero *a.csv > results/hero.csv
+> > $ grep -i arcpro *2019.csv > results/arcpro_2019.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -690,12 +690,12 @@ Print your results to  a file `results/hero.csv`.
 
 > ## Case insensitive search in select files (whole word)
 > Search for all case insensitive instances of that whole word
-> in the 'America' and 'Africa' `.csv` files in this directory. Print 
-your results to a file `results/hero-i.csv`.
+> in the '2019' `.csv` files in this directory. Print 
+your results to a file `results/2019-i.csv`.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -iw hero *a.csv > results/hero-i.csv
+> > $ grep -iw arcpro *2019.csv > results/arcpro_2019-i.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
