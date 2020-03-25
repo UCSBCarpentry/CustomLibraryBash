@@ -507,7 +507,7 @@ Now, amend the above command to the below and observe how the output of each is 
 $ grep -ci in person *.csv
 ~~~
 {: .bash}
-~~
+~~~
 Desk_Tracker_2016.csv:135
 Desk_Tracker_2017.csv:749
 Desk_Tracker_2018.csv:645
