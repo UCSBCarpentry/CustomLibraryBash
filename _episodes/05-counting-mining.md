@@ -592,13 +592,14 @@ Finally, we'll use the **regular expression syntax** covered earlier to search f
 > than searching for a plain string.
 {: .callout}
 
-The regular expression 'fr[ae]nc[eh]' will match "france", "french", but also "frence" and "franch".
+The regular expression'sp[ae][ct]ial will match "special", 
+"spatial", but also "spetial" and "spacial".
 It's generally a good idea to enclose the expression in single quotation marks, since
 that ensures the shell sends it directly to grep without any processing (such as trying to
 expand the wildcard operator *).
 
 ~~~
-$ grep -iwE 'fr[ae]nc[eh]' *.tsv
+$ grep -iwE 'fr[ae]nc[eh]' *.csv
 ~~~
 {: .bash}
 
@@ -608,7 +609,7 @@ We include the `-o` flag to print only the matching part of the lines e.g.
 (handy for isolating/checking results):
 
 ~~~
-$ grep -iwEo 'fr[ae]nc[eh]' *.tsv
+$ grep -iwEo 'fr[ae]nc[eh]' *.csv
 ~~~
 {: .bash}
 
@@ -624,12 +625,13 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search
 > Search for all case sensitive instances of
-> a whole word you choose in all four derived `.tsv` files in this directory.
+> a whole word you choose in all four derived `.csv` files in this 
+directory.
 > Print your results to the shell.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -w hero *.tsv
+> > $ grep -w hero *.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -637,12 +639,12 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search in select files
 > Search for all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' `.tsv` files in this directory.
+> the 'America' and 'Africa' `.csv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
 > > ~~~
-> > $ grep hero *a.tsv
+> > $ grep hero *a.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -650,12 +652,12 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Count words (case sensitive)
 > Count all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' `.tsv` files in this directory.
+> the 'America' and 'Africa' `.csv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -c hero *a.tsv
+> > $ grep -c hero *a.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -667,7 +669,7 @@ Pair up with your neighbor and work on these exercises:
 >
 > > ## Solution
 > > ~~~
-> > $ grep -ci hero *a.tsv
+> > $ grep -ci hero *a.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -675,11 +677,12 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case insensitive search in select files
 > Search for all case insensitive instances of that
-> word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/hero.tsv`.
+> word in the 'America' and 'Africa' `.csv` files in this directory. 
+Print your results to  a file `results/hero.csv`.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -i hero *a.tsv > results/hero.tsv
+> > $ grep -i hero *a.csv > results/hero.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -687,11 +690,12 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case insensitive search in select files (whole word)
 > Search for all case insensitive instances of that whole word
-> in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/hero-i.tsv`.
+> in the 'America' and 'Africa' `.csv` files in this directory. Print 
+your results to a file `results/hero-i.csv`.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -iw hero *a.tsv > results/hero-i.tsv
+> > $ grep -iw hero *a.csv > results/hero-i.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -700,20 +704,21 @@ Pair up with your neighbor and work on these exercises:
 > ## Searching with regular expressions
 > Use regular expressions to find all ISSN numbers
 > (four digits followed by hyphen followed by four digits)
-> in `2014-01_JA.tsv` and print the results to a file `results/issns.tsv`.
+> in `2014-01_JA.csv` and print the results to a file 
+`results/issns.csv`.
 > Note that you might have to use the `-E` flag (or `-P` with some versions
 > of `grep`, e.g. with Git Bash on Windows.).
 >
 > > ## Solution
 > > ~~~
-> > $ grep -E '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > $ grep -E '\d{4}-\d{4}' 2014-01_JA.csv > issns.csv
 > > ~~~
 > > {: .bash}
 > >
 > > or
 > >
 > > ~~~
-> > $ grep -P '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > $ grep -P '\d{4}-\d{4}' 2014-01_JA.csv > issns.csv
 > > ~~~
 > > {: .bash}
 > >
@@ -732,7 +737,7 @@ Pair up with your neighbor and work on these exercises:
 >
 > > ## Solution
 > > ~~~
-> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
+> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.csv | sort | uniq | wc -l
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -848,7 +853,7 @@ What is happening in the loop?
 > ## Selecting columns from our article dataset
 > When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Volume`, `Journal`, and `Citation` columns from our article data. With `cut` we'd:
 >~~~
-> cut -f 2,4,5,8 2014-01_JA.tsv | head
+> cut -f 2,4,5,8 2014-01_JA.csv | head
 >~~~
 >{: .bash}
 >
@@ -874,7 +879,7 @@ What is happening in the loop?
 >> First, let's see where our desired columns are:
 >>
 >>~~~
->> head -n 1 2014-01_JA.tsv
+>> head -n 1 2014-01_JA.csv
 >>~~~
 >>{: .bash}
 >>
@@ -886,11 +891,11 @@ What is happening in the loop?
 >>Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
 >> We use these positional column numbers to construct our `cut` command:
 >>```
->> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivlp.tsv
+>> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivlp.csv
 >>```
 >> We can confirm this worked by running head on the file:
 >>```
->>head 2014-01_JA_ivlp.tsv
+>>head 2014-01_JA_ivlp.csv
 >>```
 >>~~~
 >>Issue	Volume	Language	Publisher
