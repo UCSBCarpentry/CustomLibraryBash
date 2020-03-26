@@ -820,6 +820,7 @@ the line it is in to give you the actual words to count as lines in themselves.
 line, the output from `grep` would print directly to the screen)
 >+ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only 
 returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
+{: .callout}
 
 > ## Why are the variables double-quoted here?
 >
