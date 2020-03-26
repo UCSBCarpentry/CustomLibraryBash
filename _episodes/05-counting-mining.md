@@ -575,6 +575,11 @@ $ wc -l results/*.csv
 > Notice how we didn't type the `YYYY-MM-DD` date ourselves, but let
 > `date -I` do that mindless task for us. Find out about this option
 > and the standard format that it uses.
+
+>## Invalid Date-I command?
+> In Mac operating systems, there is no automatic date prefix function. In order to add the date as a prefix, 
+> We must type in the format we want ourselves. Instead of (date -I), users must type in (date "+%Y-%m-%d") 
+> when trying to put the YYYY-MM-DD the same way as linux or windows users. 
 > 
 > > ## Solution
 > > Using `date --help` will show you that `-I` is short for [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which essentially avoids the confusion between the European
@@ -860,12 +865,14 @@ What is happening in the loop?
 > ## Selecting columns from our article dataset
 > When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Volume`, `Journal`, and `Citation` columns from our article data. With `cut` we'd:
 >~~~
-> cut -f 2,4,5,8 2014-01_JA.csv | head
+> cut -f 1,3,10,12 Desk_Tracker_2017.csv | head
+>for macs: cut -f1,3,10,12 -d "," Desk_Tracker.csv | head #this is a reminder for kristi to add some blurb 
+about delimiters in cut commands, specific to macos
 >~~~
 >{: .bash}
 >
 >~~~
-> Creator	Volume	Journal	Citation
+> response_set_id	date_time	Contact type	      Question Type
 > Doolittle, W. E.  59  KIVA -ARIZONA-  KIVA -ARIZONA- 59(1), 7-26. (1993)
 > Nelson, M. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 27-48. (1993)
 > Deegan, A. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 49-64. (1993)
