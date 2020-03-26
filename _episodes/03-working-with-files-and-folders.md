@@ -149,11 +149,11 @@ to see if there exists an option to specify the number of lines to get
 (there is: `head -n 20` will print 20 lines).
 
 Another way to navigate files is to view the contents one screen at a time.
-Type `less 829-0.txt` to see the first screen, `spacebar` to see the
+Type `less Desk_Tracker_2017.csv` to see the first screen, `spacebar` to see the
 next screen and so on, then `q` to quit (return to the command prompt).
 
 ~~~
-$ less 829-0.txt
+$ less Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 
@@ -179,40 +179,42 @@ $ head 829-0.txt 33504-0.txt
 ~~~
 {: .bash}
 ~~~
-==> 829-0.txt <==
-The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
+==> Desk_Tracker_2016.csv <==
+response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,C
+"43050","","2016-10-10 14:27:52","Interdisciplinary Researc","RefBuddy","Interdi
+"43106","","2016-10-10 15:55:16","Interdisciplinary Researc","RefBuddy","Interdi
+"43161","","2016-10-10 18:57:35","Interdisciplinary Researc","RefBuddy","Interdi
+"43447","","2016-10-11 14:50:00","Interdisciplinary Researc","RefBuddy","Interdi
+"43421","","2016-10-11 19:43:52","Interdisciplinary Researc","RefBuddy","Interdi
+"43580","","2016-10-12 15:20:49","Interdisciplinary Researc","RefBuddy","Interdi
+"43581","","2016-10-12 15:20:59","Interdisciplinary Researc","RefBuddy","Interdi
+"43590","","2016-10-12 16:06:24","Interdisciplinary Researc","RefBuddy","Interdi
+"43613","","2016-10-12 17:12:29","Interdisciplinary Researc","RefBuddy","Interdi
 
+==> Desk_Tracker_2017.csv <==
+response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,C
+"51530","","2017-01-03 08:02:32","Interdisciplinary Researc","RefBuddy","Interdi
+"51800","","2017-01-09 14:57:27","Interdisciplinary Researc","RefBuddy","Interdi
+"51801","","2017-01-09 14:57:47","Interdisciplinary Researc","RefBuddy","Interdi
+"52089","","2017-01-11 14:17:19","Interdisciplinary Researc","RefBuddy","Interdi
+"52209","","2017-01-12 15:23:41","Interdisciplinary Researc","RefBuddy","Interdi
+"52240","","2017-01-12 18:51:06","Interdisciplinary Researc","RefBuddy","Interdi
+"52335","","2017-01-13 15:06:25","Interdisciplinary Researc","RefBuddy","Interdi
+"52336","","2017-01-13 15:07:19","Interdisciplinary Researc","RefBuddy","Interdi
+"52337","","2017-01-13 15:07:33","Interdisciplinary Researc","RefBuddy","Interdi
+(base) MIL01-S6AF:desktrackers jjablonski$ 
 
-This eBook is for the use of anyone anywhere at no cost and with
-almost no restrictions whatsoever.  You may copy it, give it away or
-re-use it under the terms of the Project Gutenberg License included
-with this eBook or online at www.gutenberg.org
-
-
-
-
-==> 33504-0.txt <==
-The Project Gutenberg EBook of Opticks, by Isaac Newton
-
-This eBook is for the use of anyone anywhere at no cost and with
-almost no restrictions whatsoever.  You may copy it, give it away or
-re-use it under the terms of the Project Gutenberg License included
-with this eBook or online at www.gutenberg.org
-
-
-Title: Opticks
-       or, a Treatise of the Reflections, Refractions, Inflections,
 ~~~
 {: .output}
 
-All good so far, but if we had *lots* of books, it would be tedious to enter
+All good so far, but if we had *lots* of years, it would be tedious to enter
 all the filenames. Luckily the shell supports wildcards! The `?` (matches exactly
 one character) and `*` (matches zero or more characters) are probably familiar
 from library search systems. We can use the `*` wildcard to write the above `head`
 command in a more compact way:
 
 ~~~
-$ head *.txt
+$ head *.csv
 ~~~
 {: .bash}
 
@@ -236,7 +238,7 @@ giving it the old name as the first argument and the new name as the second
 argument:
 
 ~~~
-$ mv 829-0.txt gulliver.txt
+$ mv mv Desk_Tracker_2016.csv CollabStats_2016.csv
 ~~~
 {: .bash}
 
@@ -249,9 +251,7 @@ $ ls
 ~~~
 {: .bash}
 ~~~
-2014-01-31_JA-africa.tsv   2014-02-02_JA-britain.tsv  gulliver.txt
-2014-01-31_JA-america.tsv  33504-0.txt
-2014-01_JA.tsv
+CollabStats_2016.csv	Desk_Tracker_2017.csv	Desk_Tracker_2018.csv	Desk_Tracker_2019.csv
 ~~~
 {: .output}
 
@@ -260,12 +260,12 @@ $ ls
 > Instead of *moving* a file, you might want to *copy* a file (make a duplicate),
 > for instance to make a backup before modifying a file.
 > Just like the `mv` command, the `cp` command takes two arguments: the old name
-> and the new name. How would you make a copy of the file `gulliver.txt` called
-> `gulliver-backup.txt`? Try it!
+> and the new name. How would you make a copy of the file `Desk_Tracker_2018.csv` called
+> `Desk_Tracker_2018_backup.csv`? Try it!
 >
 > > ## Answer
 > > ~~~
-> > cp gulliver.txt gulliver-backup.txt
+> > cp Desk_Tracker_2018.csv DeskTracker_2018_backup.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -288,19 +288,19 @@ $ ls
 >
 > If the last argument you give to the `mv` command is a directory, not a file,
 > the file given in the first argument will be moved to that directory. Try
-> using the `mv` command to move the file `gulliver-backup.txt` into the
+> using the `mv` command to move the file `DeskTracker_2018_backup.csv` into the
 > `backup` folder.
 >
 > > ## Answer
 > > ~~~
-> > mv gulliver-backup.txt backup
+> > mv DeskTracker_2018_backup.csv backup
 > > ~~~
 > > {: .bash}
 > >
 > > This would also work:
 > >
 > > ~~~
-> > mv gulliver-backup.txt backup/gulliver-backup.txt
+> > mv Desk_Tracker_2018.csv backup/DeskTracker_2018_backup.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
