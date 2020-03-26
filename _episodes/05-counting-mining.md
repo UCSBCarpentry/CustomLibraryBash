@@ -790,28 +790,27 @@ $ mv pg514.txt littlewomen.txt
 
 This renames the file to something easier to type.
 
-Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each girl's name,
+Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each ,
 and count the number of times it appears. The results will print to the screen.
 
 ~~~
-$ for name in "Consultation" "Research Assistance" "Directional" "Informational"
+$ for name in "Consultation" "Directional" "Informational" "Research"
 > do
 >    echo "$name"
->    grep -wo "$name" littlewomen.txt | wc -l
+>    grep -wo "$name" Desk_Tracker_2017.csv | wc -l
 > done
 ~~~
 
 {: .bash}
 
 ~~~
-Jo
+Consultation
 1355
-Meg
+Directional
 683
-Beth
+Informational
 459
-Amy
-645
+Research
 ~~~
 {: .output}
 
@@ -827,7 +826,7 @@ What is happening in the loop?
 > use `"$..."` as a safeguard against white-space being misinterpreted.
 > Why _could_ we omit the `"`-quotes in the above example?
 > 
-> b) What happens if you add `"Louisa May Alcott"` to the first line of
+> b) What happens if you add `"Scholarly Communication"` to the first line of
 > the loop and remove the `"` from `$name` in the loop's code?
 > 
 >> ## Solutions
