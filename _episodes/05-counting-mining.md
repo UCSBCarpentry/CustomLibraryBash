@@ -782,7 +782,10 @@ your results to a file `results/2019-i.csv`.
 
 ### Using a Loop to Count Words
 
-We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
+We will now use a loop to automate the counting of certain words within a document. For this, we will keep 
+using the Desktracker data but focus on the 2017 data.
+ 
+_[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
 
 ~~~
 $ mv pg514.txt littlewomen.txt
@@ -790,11 +793,11 @@ $ mv pg514.txt littlewomen.txt
 
 This renames the file to something easier to type.
 
-Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each ,
-and count the number of times it appears. The results will print to the screen.
+Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each 
+research type, and count the number of times it appears. The results will print to the screen.
 
 ~~~
-$ for name in "Consultation" "Directional" "Informational" "Research"
+$ for name in "Spatial" "Statistics" "Content" "Software"
 > do
 >    echo "$name"
 >    grep -wo "$name" Desk_Tracker_2017.csv | wc -l
@@ -804,19 +807,21 @@ $ for name in "Consultation" "Directional" "Informational" "Research"
 {: .bash}
 
 ~~~
-Consultation
-1355
-Directional
-683
-Informational
-459
-Research
+Spatial
+63
+Statistics
+48
+Content
+137
+Software
+124
 ~~~
 {: .output}
 
 What is happening in the loop?  
 + `echo "$name"` is printing the current value of `$name`
-+ `grep "$name" littlewomen.txt` finds each line that contains the value stored in `$name`. The `-w` flag finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
++ `grep "$name" Desk_Tracker_2017.csv` finds each line that contains the value stored in `$name`. The `-w` flag 
++  finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
 + The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
 + `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
 
@@ -826,8 +831,10 @@ What is happening in the loop?
 > use `"$..."` as a safeguard against white-space being misinterpreted.
 > Why _could_ we omit the `"`-quotes in the above example?
 > 
-> b) What happens if you add `"Scholarly Communication"` to the first line of
-> the loop and remove the `"` from `$name` in the loop's code?
+> b) What happens if you add `"Interlibrary Loan Requests"` to the first line of
+> the loop and remove the `"` from `$name` in the loop's code? (Say you mistake the IRC's Desktracker for the 
+> Mountain Information Desk's which falls under Access Services.) 
+
 > 
 >> ## Solutions
 >> 
@@ -836,14 +843,14 @@ What is happening in the loop?
 >> it's better to use rather once too often than once too rarely.
 >> 
 >> b) Without `"`-quoting `$name`, the last loop will try to execute
->> `grep Louisa May Alcott littlewomen.txt`. `grep` interprets only the
->> first word as the search pattern, but `May` and `Alcott` as filenames.
+>> `grep Interlibrary Loan Requests Desk_Tracker_2017.csv`. `grep` interprets only the
+>> first word as the search pattern, but `Loan` and `Requests` as filenames.
 >> This produces two errors and a possibly untrustworthy count:
 >> ~~~
 >> ...
->> Louisa May Alcott
->> grep: May: No such file or directory
->> grep: Alcott: No such file or directory
+>> Interlibrary Loan Requests
+>> grep: Loan: No such file or directory
+>> grep: Requests: No such file or directory
 >> 4
 >> ~~~
 >> {: .bash}
