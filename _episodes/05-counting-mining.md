@@ -468,7 +468,7 @@ print the matching lines.
 {: .callout}
 
 Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep irc *.csv` to `grep -c spatial *.csv` and hit enter.
+Amend `grep irc *.csv` to `grep -c Spatial *.csv` and hit enter.
 
 ~~~
 $ grep -c Spatial *.csv
@@ -500,8 +500,9 @@ Desk_Tracker_2019.csv:343
 ~~~
 {: .output}
 
-We got back the counts of the instances of the string `Walk In` within the files.
-Now, amend the above command to the below and observe how the output of each is different:
+We got back the counts of the instances of the string `In Person` within 
+the files. Now, amend the above command to the below and observe how the 
+output of each is different:
 
 ~~~
 $ grep -ci in person *.csv
@@ -555,7 +556,7 @@ $ grep -iw Spatial *.csv > results/$(date -I)iw-spatial.csv
 
 This script looks in both of the defined files and
 exports any lines containing the whole word `revolution` (without regard to case)
-to the specified `.tsv` file.
+to the specified `.csv` file.
 
 We can show the difference between the files we created.
 
@@ -592,7 +593,7 @@ Finally, we'll use the **regular expression syntax** covered earlier to search f
 > than searching for a plain string.
 {: .callout}
 
-The regular expression'Cont[ae][cn]t' will match "Content", "Contact", 
+The regular expression 'Cont[ae][cn]t' will match "Content", "Contact", 
 but also "Contect" and "Contant".
 It's generally a good idea to enclose the expression in single quotation marks, since
 that ensures the shell sends it directly to grep without any processing (such as trying to
@@ -664,7 +665,7 @@ directory.
 {: .challenge}
 
 > ## Count words (case insensitive)
-> Count all case insensitive instances of that word in the 'America' and 'Africa' `.tsv` files
+> Count all case insensitive instances of that word in the '2019' `.csv` files
 > in this directory. Print your results to the shell.
 >
 > > ## Solution
@@ -677,7 +678,7 @@ directory.
 
 > ## Case insensitive search in select files
 > Search for all case insensitive instances of that
-> word in the 'America' and 'Africa' `.csv` files in this directory. 
+> word in the '2019' `.csv` files in this directory. 
 Print your results to  a file `results/2019.csv`.
 >
 > > ## Solution
@@ -793,7 +794,7 @@ Now let's create our loop. In the loop, we will ask the computer to go through t
 and count the number of times it appears. The results will print to the screen.
 
 ~~~
-$ for name in "Jo" "Meg" "Beth" "Amy"
+$ for name in "Consultation" "Research Assistance" "Directional" "Informational"
 > do
 >    echo "$name"
 >    grep -wo "$name" littlewomen.txt | wc -l
