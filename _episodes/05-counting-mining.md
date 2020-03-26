@@ -863,7 +863,10 @@ What is happening in the loop?
 {: .challenge}
 
 > ## Selecting columns from our article dataset
-> When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Volume`, `Journal`, and `Citation` columns from our article data. With `cut` we'd:
+> When you receive data it will often contain more columns or variables than you need for your work. If you 
+want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a 
+tool for extracting sections from a file. For instance, say we want to retain only the `response_set_id`, 
+`date_time`, `Question Type`, and `Contact Type` columns from our article data. With `cut` we'd:
 >~~~
 > cut -f 1,3,10,12 Desk_Tracker_2017.csv | head
 >for macs: cut -f1,3,10,12 -d "," Desk_Tracker.csv | head #this is a reminder for kristi to add some blurb 
@@ -889,7 +892,8 @@ delimiters so the bottom code works for both mac and pc
 > Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
 > If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
 > ### Now your turn
->Select the columns `Issue`, `Volume`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivlp.tsv`.
+>Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output into 
+>a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
 >> ## Solution
 >> First, let's see where our desired columns are:
 >>
