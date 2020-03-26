@@ -555,7 +555,7 @@ $ grep -iw Spatial *.csv > results/$(date -I)iw-spatial.csv
 {: .bash}
 
 This script looks in both of the defined files and
-exports any lines containing the whole word `revolution` (without regard to case)
+exports any lines containing the whole word `spatial` (without regard to case)
 to the specified `.csv` file.
 
 We can show the difference between the files we created.
@@ -571,17 +571,14 @@ $ wc -l results/*.csv
 ~~~
 {: .output}
 
-> ## Automatically adding a date prefix
-> Notice how we didn't type the `YYYY-MM-DD` date ourselves, but let
-> `date -I` do that mindless task for us. Find out about this option
-> and the standard format that it uses.
 
 >## Invalid Date --I command?
-> In Mac operating systems, there is no automatic date prefix function. In order to add the date as a prefix, 
-> We must type in the format we want ourselves. Instead of (date -I), users must type in (date "+%Y-%m-%d") 
-> when trying to put the YYYY-MM-DD the same way as linux or windows users. Using date --help, will show the 
->flags, however, some grep commands are different between operating systems, and --I is not one of them on Mac 
-OSx 
+> If you are using a Windows or Linux device, (date -I) automatically added a date prefix to your subsetted 
+>data. However, in Mac operating systems, there is no automatic date prefix function. In order to add the date 
+>as a prefix,we must type in the format we want ourselves. Instead of the --I flag, users must type in '(date 
+>"+%Y-%m-%d")' when trying to put the YYYY-MM-DD the same way as linux or windows users. Using date --help, 
+>will show the flags. Some grep commands are different between operating systems, and --I is not one of them on 
+>Mac OSx 
 {: .callout}
 
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
@@ -707,10 +704,10 @@ your results to a file `results/2019-i.csv`.
 > ## Searching with regular expressions
 > Use regular expressions to find all ISSN numbers
 > (four digits followed by hyphen followed by four digits)
-> in `2014-01_JA.csv` and print the results to a file 
+> in `Desk_Tracker_2019.csv` and print the results to a file 
 `results/issns.csv`.
 > Note that you might have to use the `-E` flag (or `-P` with some versions
-> of `grep`, e.g. with Git Bash on Windows.).
+> of `grep`, e.g. with Git Bash on Windows.). #change this to finding patterns in arc products 
 >
 > > ## Solution
 > > ~~~
@@ -813,7 +810,7 @@ Software
 ~~~
 {: .output}
 
-> ##What is happening in the loop?  
+> ## What is happening in the loop?  
 >+ `echo "$name"` is printing the current value of `$name`
 >+ `grep "$name" Desk_Tracker_2017.csv` finds each line that contains the value stored in `$name`. The `-w` 
 >flag 
