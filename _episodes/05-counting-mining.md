@@ -867,21 +867,22 @@ What is happening in the loop?
 >~~~
 > cut -f 1,3,10,12 Desk_Tracker_2017.csv | head
 >for macs: cut -f1,3,10,12 -d "," Desk_Tracker.csv | head #this is a reminder for kristi to add some blurb 
-about delimiters in cut commands, specific to macos
+about delimiters in cut commands, specific to macos #nvm our data is different from the original and has 
+delimiters so the bottom code works for both mac and pc
 >~~~
 >{: .bash}
 >
 >~~~
-> response_set_id	date_time	Contact type	      Question Type
-> Doolittle, W. E.  59  KIVA -ARIZONA-  KIVA -ARIZONA- 59(1), 7-26. (1993)
-> Nelson, M. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 27-48. (1993)
-> Deegan, A. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 49-64. (1993)
-> Stone, T.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 65-82. (1993)
-> Adams, W. Y.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 7-18. (1994)
-> Beswick, S. F.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 19-48. (1994)
-> Cheeseboro, A. Q.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 49-74. (1994)
-> Duany, W.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 75-102. (1994)
-> Mohamed Ibrahim Khalil	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 103-118. (1994)
+> response_set_id,date_time,Contact Type (text),Question Type (text)
+> "51530", "2017-01-03 08:02:32", "Personal Email", "Reference / Research Assistance"
+> "51800", "2017-01-09 14:57:27", "In Person", "Reference / Research Assistance"
+> "51801", "2017-01-09 14:57:47", "In Person", "Directional / Informational"
+> "52089", "2017-01-11 14:17:19", "In Person", "Reference / Research Assistance"
+> "52209", "2017-01-12 15:23:41", "In Person", "Directional / Informational" 
+> "52240", "2017-01-12 18:51:06". "In Person", "Reference / Research Assistance"
+> "52335", "2017-01-13 15:06:25", "Personal Email", "Reference / Research Assistance"
+> "52336", "2017-01-13 15:07:19", "In Person", "Reference / Research Assistance"
+> "52337", "2017-01-13 15:07:33", "Personal Email", "Reference / Research Assistance"
 >~~~
 >{: .output}
 >
@@ -893,30 +894,36 @@ about delimiters in cut commands, specific to macos
 >> First, let's see where our desired columns are:
 >>
 >>~~~
->> head -n 1 2014-01_JA.csv
+>> head -n 1 Desk_Tracker_2016.csv
 >>~~~
 >>{: .bash}
 >>
 >>~~~
->>File	Creator	Issue	Volume	Journal	ISSN	ID	Citation	Title	Place Labe	Language	Publisher	Date
+>>response_set_id, parent_response_set_id, date_time, page, user, branch, desk, library, Contact Type, Contact 
+Type (text), Question Type, Question Type (text)
 >>~~~
 >>{: .output}
 >>
->>Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
+>>Ok, now we know `Response set ID` is column 1, `date_time` 3, `Contact Type` 10, and `Question Type` 12.
 >> We use these positional column numbers to construct our `cut` command:
 >>```
->> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivlp.csv
+>> cut -f1,3,10,12 -d "," Desk_Tracker_2016.csv > Desk_Tracker_2016_simp.csv
 >>```
 >> We can confirm this worked by running head on the file:
 >>```
->>head 2014-01_JA_ivlp.csv
+>>head Desk_Tracker_2016_simp.csv
 >>```
 >>~~~
->>Issue	Volume	Language	Publisher
->>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
->>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
->>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
->>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
+>>response_set_id,date_time,Contact Type (text),Question Type (text)
+>>"43050", "2016-10-10 14:27:52", "In Person", "Reference / Research Assistance"
+>>"43106", "2016-10-10 15:55:16", "In Person", "Reference / Research Assistance"
+>>"43161", "2016-10-10 18:57:35", "Collab Email", "Reference / Research Assistance"
+>>"43447", "2016-10-11 14:50:00", "In Person", "Reference / Research Assistance"
+>>"43421", "2016-10-11 19:43:52", "In Person", "Directional / Informational"
+>>"43580", "2016-10-12 15:20:49", "In Person", "Directional / Informational"
+>>"43581", "2016-10-12 15:20:59", "In Person", "Directional / Informational"
+>>"43590", "2016-10-12 16:06:24", "In Person", "Directional / Informational"
+>>"43613", "2016-10-12 17:12:29", "In Person", "Reference / Research Assistance"
 >>~~~
 >>{: .output}
 > {: .solution}
