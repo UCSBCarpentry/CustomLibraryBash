@@ -809,7 +809,7 @@ Software
 124
 ~~~
 {: .output}
-
+>
 > ## What is happening in the loop?  
 >+ `echo "$name"` is printing the current value of `$name`
 >+ `grep "$name" Desk_Tracker_2017.csv` finds each line that contains the value stored in `$name`. The `-w` 
