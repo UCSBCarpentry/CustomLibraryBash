@@ -576,16 +576,13 @@ $ wc -l results/*.csv
 > `date -I` do that mindless task for us. Find out about this option
 > and the standard format that it uses.
 
->## Invalid Date-I command?
+>## Invalid Date --I command?
 > In Mac operating systems, there is no automatic date prefix function. In order to add the date as a prefix, 
 > We must type in the format we want ourselves. Instead of (date -I), users must type in (date "+%Y-%m-%d") 
-> when trying to put the YYYY-MM-DD the same way as linux or windows users. 
-> 
-> > ## Solution
-> > Using `date --help` will show you that `-I` is short for [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which essentially avoids the confusion between the European
-> > and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
-> {: .solution}
-{: .challenge}
+> when trying to put the YYYY-MM-DD the same way as linux or windows users. Using date --help, will show the 
+>flags, however, some grep commands are different between operating systems, and --I is not one of them on Mac 
+OSx 
+{: .callout}
 
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
@@ -790,13 +787,6 @@ your results to a file `results/2019-i.csv`.
 We will now use a loop to automate the counting of certain words within a document. For this, we will keep 
 using the Desktracker data but focus on the 2017 data.
  
-_[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
-
-~~~
-$ mv pg514.txt littlewomen.txt
-~~~
-
-This renames the file to something easier to type.
 
 Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each 
 research type, and count the number of times it appears. The results will print to the screen.
@@ -823,12 +813,16 @@ Software
 ~~~
 {: .output}
 
-What is happening in the loop?  
-+ `echo "$name"` is printing the current value of `$name`
-+ `grep "$name" Desk_Tracker_2017.csv` finds each line that contains the value stored in `$name`. The `-w` flag 
-+  finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
-+ The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
-+ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
+> ##What is happening in the loop?  
+>+ `echo "$name"` is printing the current value of `$name`
+>+ `grep "$name" Desk_Tracker_2017.csv` finds each line that contains the value stored in `$name`. The `-w` 
+>flag 
+>+ finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from 
+the line it is in to give you the actual words to count as lines in themselves.
+>+ The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the 
+line, the output from `grep` would print directly to the screen)
+>+ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only 
+returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
 
 > ## Why are the variables double-quoted here?
 >
@@ -848,7 +842,7 @@ What is happening in the loop?
 >> it's better to use rather once too often than once too rarely.
 >> 
 >> b) Without `"`-quoting `$name`, the last loop will try to execute
->> `grep Interlibrary Loan Requests Desk_Tracker_2017.csv`. `grep` interprets only the
+>> `grep "Interlibrary Loan Requests" Desk_Tracker_2017.csv`. `grep` interprets only the
 >> first word as the search pattern, but `Loan` and `Requests` as filenames.
 >> This produces two errors and a possibly untrustworthy count:
 >> ~~~
@@ -856,13 +850,13 @@ What is happening in the loop?
 >> Interlibrary Loan Requests
 >> grep: Loan: No such file or directory
 >> grep: Requests: No such file or directory
->> 4
+>> 0
 >> ~~~
 >> {: .bash}
 > {: .solution}
 {: .challenge}
 
-> ## Selecting columns from our article dataset
+> ## Selecting columns from our DeskTracker dataset
 > When you receive data it will often contain more columns or variables than you need for your work. If you 
 want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a 
 tool for extracting sections from a file. For instance, say we want to retain only the `response_set_id`, 
@@ -892,8 +886,8 @@ delimiters so the bottom code works for both mac and pc
 > Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
 > If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
 > ### Now your turn
->Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output into 
->a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
+>>Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output 
+>>into a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
 >> ## Solution
 >> First, let's see where our desired columns are:
 >>
