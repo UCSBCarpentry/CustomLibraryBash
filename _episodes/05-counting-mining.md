@@ -831,9 +831,7 @@ returned lines that contained the value stored in `$name`, `wc -l` corresponds t
 > b) What happens if you add `"Interlibrary Loan Requests"` to the first line of
 > the loop and remove the `"` from `$name` in the loop's code? (Say you mistake the IRC's Desktracker for the 
 > Mountain Information Desk's which falls under Access Services.) 
-{: .challenge}
-
-> 
+>
 >> ## Solutions
 >> 
 >> a) Because we are explicitly listing the names after `in`,
