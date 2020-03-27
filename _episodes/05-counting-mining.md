@@ -852,11 +852,11 @@ returned lines that contained the value stored in `$name`, `wc -l` corresponds t
 > {: .solution}
 {: .challenge}
 
-># Using Delimiters with 'cut'
+> ## Using Delimiters with 'cut'
 >Sometimes we need to workaround datasets that haven't been cleaned for us. Normally, using the 'cut --f' flag 
-is all one would need to extract columns, but thats assuming the data has already been cleamed up. In our csv 
-files, the data has been separated by commas, so we must use a second flag, '--d' and use " " to indicate a 
-delimiter and the type that is being used to extract the data.
+>is all one would need to extract columns, but thats assuming the data has already been cleamed up. In our csv 
+>files, the data has been separated by commas, so we must use a second flag, '--d' and use " " to indicate a 
+>delimiter and the type that is being used to extract the data.
 {: .callout}
 
 > ## Selecting columns from our DeskTracker dataset
