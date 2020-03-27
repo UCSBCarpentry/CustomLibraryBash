@@ -779,13 +779,13 @@ your results to a file `results/2019-i.csv`.
 > {: .solution}
 {: .challenge}
 
-### Using a Loop to Count Words
+## Using a Loop to Count Words
 
 We will now use a loop to automate the counting of certain words within a document. For this, we will keep 
 using the Desktracker data but focus on the 2017 data.
  
 
-Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each 
+In the loop, we will ask the computer to go through the text, looking for each 
 research type, and count the number of times it appears. The results will print to the screen.
 
 ~~~
@@ -795,7 +795,6 @@ $ for name in "Spatial" "Statistics" "Content" "Software"
 >    grep -wo "$name" Desk_Tracker_2017.csv | wc -l
 > done
 ~~~
-
 {: .bash}
 
 ~~~
@@ -852,6 +851,13 @@ returned lines that contained the value stored in `$name`, `wc -l` corresponds t
 >> {: .bash}
 > {: .solution}
 {: .challenge}
+
+># Using Delimiters with 'cut'
+>Sometimes we need to workaround datasets that haven't been cleaned for us. Normally, using the 'cut --f' flag 
+is all one would need to extract columns, but thats assuming the data has already been cleamed up. In our csv 
+files, the data has been separated by commas, so we must use a second flag, '--d' and use " " to indicate a 
+delimiter and the type that is being used to extract the data.
+{: .callout}
 
 > ## Selecting columns from our DeskTracker dataset
 > When you receive data it will often contain more columns or variables than you need for your work. If you 
