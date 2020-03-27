@@ -786,7 +786,8 @@ using the Desktracker data but focus on the 2017 data.
  
 
 In the loop, we will ask the computer to go through the text, looking for each 
-research type, and count the number of times it appears. The results will print to the screen.
+research type that patrons needed assistance with, and count the number of times it appears. The results will 
+print to the screen.
 
 ~~~
 $ for name in "Spatial" "Statistics" "Content" "Software"
@@ -852,23 +853,25 @@ returned lines that contained the value stored in `$name`, `wc -l` corresponds t
 > {: .solution}
 {: .challenge}
 
-> ## Using Delimiters with 'cut'
+## Selecting Columns from Datasets
+When you receive data it will often contain more columns or variables than you need for your work. If you want 
+to select only the columns you need for your analysis, you can use the 'cut' command to do so. 'cut' is a tool 
+for extracting sections from a file.
+
+> ## Using Delimiters with "cut"
 >Sometimes we need to workaround datasets that haven't been cleaned for us. Normally, using the 'cut --f' flag 
->is all one would need to extract columns, but thats assuming the data has already been cleamed up. In our csv 
+>would extract the data, but that's assuming the data has already been cleaned. In our csv 
 >files, the data has been separated by commas, so we must use a second flag, '--d' and use " " to indicate a 
->delimiter and the type that is being used to extract the data.
+>the type of delimiter that is being used to extract the data.
 {: .callout}
 
-> ## Selecting columns from our DeskTracker dataset
-> When you receive data it will often contain more columns or variables than you need for your work. If you 
-want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a 
-tool for extracting sections from a file. For instance, say we want to retain only the `response_set_id`, 
-`date_time`, `Question Type`, and `Contact Type` columns from our article data. With `cut` we'd:
->~~~
-> cut -f 1,3,10,12 Desk_Tracker_2017.csv | head
->for macs: cut -f1,3,10,12 -d "," Desk_Tracker.csv | head #this is a reminder for kristi to add some blurb 
-about delimiters in cut commands, specific to macos #nvm our data is different from the original and has 
-delimiters so the bottom code works for both mac and pc
+> ## Extracting data from DeskTracker
+> For instance, say we want to retain only the `response_set_id`, `date_time`, `Question Type`, and `Contact 
+> Type` columns from our article data. With `cut` we'd:
+> 
+>~~~ 
+>cut -f 1,3,10,12 Desk_Tracker_2017.csv | head for 
+>macs: cut -f1,3,10,12 -d "," Desk_Tracker.csv | head 
 >~~~
 >{: .bash}
 >
@@ -905,12 +908,12 @@ Type (text), Question Type, Question Type (text)
 >>~~~
 >>{: .output}
 >>
->>Ok, now we know `Response set ID` is column 1, `date_time` 3, `Contact Type` 10, and `Question Type` 12.
+>>Ok, now we know `response_set_id` is column 1, `date_time` 3, `Contact Type` 10, and `Question Type` 12.
 >> We use these positional column numbers to construct our `cut` command:
 >>```
 >> cut -f1,3,10,12 -d "," Desk_Tracker_2016.csv > Desk_Tracker_2016_simp.csv
 >>```
->> We can confirm this worked by running head on the file:
+>> We can confirm this worked by running "head" on the file:
 >>```
 >>head Desk_Tracker_2016_simp.csv
 >>```
