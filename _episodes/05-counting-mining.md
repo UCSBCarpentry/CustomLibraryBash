@@ -232,8 +232,8 @@ $ cat sorted-lengths.txt
 
 Finally we have our old friend `head`, that we can use to get the first 
 line of the `sorted-lengths.txt`:
-(Earlier, we used a lower-case L, but here, its the number 1 because we 
-want to sort the FIRST line of the file)
+(Earlier, we had the issue of is this a lower case L or a number one. 
+Here, its the number 1 because the '-n' is for sorting lines, and we want the number)
 ~~~~
 $ head -n 1 sorted-lengths.txt
 ~~~~
