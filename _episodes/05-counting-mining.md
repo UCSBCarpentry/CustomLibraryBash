@@ -113,13 +113,28 @@ $ head -n 3 Desk_Tracker_2016.csv
 ~~~
 {: .bash}
 ~~~
-holding_id,filed_by,official_flight_id,filed_by_in_catalog,filed_by_in_collection,location,special_location,scale_1,scal502000,
-1MFUSGS000S01,1MFUSGS000S01,1MFUSGS000S01,1MFUSGS000S01,4,Cut Frame (Vault),NULL,NULL,NULL,none,NULL,NULL,1980-04502001,
-311RW-M542-16PS,311RW M542 16PS,311RW M542 16PS, 311RW M542 16PS,4,Cut Frame (Vault),5064,NULL,NULL,none,NULL.NULL
+response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,Contact 
+Type,Contact Type (text),Question Type,Question Type (text),
+Reference   Research Type,Reference   Research Type (text),Reference   
+Research Type 2,Reference   Research Type 2 (text),Time Spent in 
+minutes,Comment,Reference   Research Type 3,Reference   Research Type 3 (text),Reference   
+Research Type 4,Reference   Research Type 4 (text)
+"43050","","2016-10-10 14:27:52","Interdisciplinary 
+Researc","RefBuddy","Interdisciplinary Research Collaboratory",
+"Interdisciplinary Research Collaboratory Desk","University of 
+California, Santa Barbara","In Person","","Reference / Research 
+Assistance","","Content","","Referred to Subject Librarian","","10","Crimson Hexagon 
+query re: 100 Twitter pickup for Korean keywords, 0 for Facebook. 
+Referred to Shari Laster.","","","","","43106","","2016-10-10 
+15:55:16","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory",
+"Interdisciplinary Research Collaboratory Desk","University of 
+California, Santa Barbara","In Person","","Reference / Research 
+Assistance","","Content","","","","10","Crimson Hexagon odd results.","","","",""
 ~~~
 {: .output}
 
-In the header, we can see the common metadata fields of flight ids: `holding_id`, `official_flight_id`, `filed_by`, etc.
+In the header, we can see the common metadata fields of Desktracker: 
+`Question Type`, `Research Type`, `Library.
 
 Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, and bytes.
