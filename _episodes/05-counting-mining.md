@@ -76,9 +76,8 @@ $ ls -lhs
 ~~~
 {: .output}
 
-In this episode we'll focus on the dataset `ap_flights.csv` inside of 
-the airphotodata directory, that contains
-journal article metadata, and the 4`.csv Desktracker files.
+In this episode we'll focus on the datasets in the desktracker  
+directory, that contains four .csv Desktracker files.
 
 > ## CSV and TSV Files
 > CSV (Comma-separated values) is a common plain text format for storing tabular
@@ -93,11 +92,12 @@ journal article metadata, and the 4`.csv Desktracker files.
 {: .callout}
 <!-- hm, reminds me of MARC -->
 
-First, let's have a look at the largest data file, using the tools we learned in
+First, let's have a look at the the 2016 file, using the tools we 
+learned in
 [Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
-$ cat ap_flights.csv
+$ cat Desk_Tracker_2016.csv
 ~~~
 {: .bash}
 
@@ -109,7 +109,7 @@ In most data files a quick glimpse of the first few lines already tells us a lot
 about the structure of the dataset, for example the table/column headers:
 
 ~~~
-$ head -n 3 ap_flights.csv
+$ head -n 3 Desk_Tracker_2016.csv
 ~~~
 {: .bash}
 ~~~
@@ -124,7 +124,8 @@ In the header, we can see the common metadata fields of flight ids: `holding_id`
 Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, and bytes.
 Since we love the wildcard operator, let's run the command
-`wc *.tsv` to get counts for all the `.csv` files in the Desktrackers directory.
+`wc *.csv` to get counts for all the `.csv` files in the Desktrackers 
+directory.
 (it takes a little time to complete):
 
 ~~~~
@@ -194,7 +195,7 @@ $ cat lengths.txt
     347 Desk_Tracker_2019.csv	
    1892 total
 ~~~
-{: .bash}
+{: .output}
 
 Next, there is the `sort` command. We'll use the `-n` flag to specify that we
 want numerical sorting, not lexical sorting, we output the results into
@@ -214,9 +215,10 @@ $ cat sorted-lengths.txt
 ~~~
 {: .output}
 
-Finally we have our old friend `head`, that we can use to get the first line
-of the `sorted-lengths.txt`:
-
+Finally we have our old friend `head`, that we can use to get the first 
+line of the `sorted-lengths.txt`:
+(Earlier, we used a lower-case L, but here, its the number 1 because we 
+want to sort the FIRST line of the file)
 ~~~~
 $ head -n 1 sorted-lengths.txt
 ~~~~
