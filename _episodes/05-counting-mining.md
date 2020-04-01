@@ -558,6 +558,17 @@ $ grep -i spatial *.csv > results/$(date -I)i-spatial.csv
 ~~~
 {: .bash}
 
+>## Invalid Date --I command?
+> If you are using a Windows or Linux device, (date -I) automatically
+>added a date prefix to your subsetted data. However, in Mac operating systems, there is 
+>no automatic date function.In order to add the date as a prefix, we must type in the 
+>format we want ourselves. Instead of the --I flag, users must type in '(date 
+>"+%Y-%m-%d")' when trying to put the YYYY-MM-DD the same way as linux or windows users. Using 'date --help' will show the flags. Some 
+>grep commands are different between operating between operating systems and --I is one 
+>of them on Mac OSX. 
+{: .callout}
+
+
 This saves the subsetted data to a new file.
 
 However, if we look at this file, it contains every instance of the
@@ -648,7 +659,7 @@ directory.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -w arcpro *.csv
+ > > $ grep -w arcpro *.csv
 > > ~~~
 > > {: .bash}
 > {: .solution}
