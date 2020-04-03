@@ -889,8 +889,7 @@ for extracting sections from a file.
 > Type` columns from our article data. With `cut` we'd:
 > 
 >~~~ 
->cut -f 1,3,10,12 Desk_Tracker_2017.csv | head for 
->macs: cut -f1,3,10,12 -d "," Desk_Tracker.csv | head 
+>cut -f1,3,10,12 -d "," Desk_Tracker_2017.csv | head 
 >~~~
 >{: .bash}
 >
