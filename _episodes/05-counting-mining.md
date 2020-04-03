@@ -597,17 +597,8 @@ $ wc -l results/*.csv
      376 iw-spatial.csv
      752 total
 ~~~
-{: .output}
+{: .output} 
 
-
->## Invalid Date --I command?
-> If you are using a Windows or Linux device, (date -I) automatically added a date prefix to your subsetted 
->data. However, in Mac operating systems, there is no automatic date prefix function. In order to add the date 
->as a prefix,we must type in the format we want ourselves. Instead of the --I flag, users must type in '(date 
->"+%Y-%m-%d")' when trying to put the YYYY-MM-DD the same way as linux or windows users. Using date --help, 
->will show the flags. Some grep commands are different between operating systems, and --I is not one of them on 
->Mac OSx 
-{: .callout}
 
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
