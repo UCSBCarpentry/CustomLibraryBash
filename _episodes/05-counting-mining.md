@@ -554,7 +554,7 @@ $ grep -i Spatial *.csv
 
 This script looks in the defined files and prints any lines containing `spatial`
 (without regard to case) to the shell. We let the shell add today's date to the
-filename:
+filename (say this was a daily occurrence and we wanted to keep track of dates):
 
 ~~~
 $ grep -i spatial *.csv > results/$(date -I)i-spatial.csv
@@ -576,7 +576,7 @@ This saves the subsetted data to a new file.
 
 However, if we look at this file, it contains every instance of the
 string 'spatial' including as a single word and as part of other words
-such as 'spatially'. This perhaps isn't as useful as we thought...
+ such as 'spatially'. This perhaps isn't as useful as we thought...
 Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
