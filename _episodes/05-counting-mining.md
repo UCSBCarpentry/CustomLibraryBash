@@ -322,7 +322,7 @@ programming languages.
 {: .challenge}
 
 > ## Count, sort and print (faded example)
->To count the total lines in every `tsv` file, sort the results and then print the first line of the file we use the following:
+>To count the total lines in every `csv` file, sort the results and then print the first line of the file we use the following:
 >
 >~~~
 >wc -l *.csv | sort -n | head -n 1
@@ -330,7 +330,9 @@ programming languages.
 >{: .bash}
 >
 >
->Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
+>Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the 
+>words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts 
+>in ascending order by default).
 >
 >~~~
 >__ -w *.csv | sort __ | ____
@@ -339,9 +341,10 @@ programming languages.
 >
 > > ## Solution
 > >
-> > Here we use the `wc` command with the `-w` (word) flag on all `tsv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
+> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 11 lines (10 
+> > files and the total) using the `tail` command.
 > >~~~
-> > wc -w *.csv | sort -n | tail -n 11
+> > wc -w *.csv | sort -n | tail -n 1
 > >~~~
 > {: .solution}
 >{: .bash}
@@ -403,7 +406,7 @@ programming languages.
 >
 > Check the manual for the `wc` command (either using `man wc` or `wc --help`)
 > to see if you can find out what flag to use to print out the number of words
-> (but not the number of lines and bytes). Try it with the `.tsv` files.
+> (but not the number of lines and bytes). Try it with the `.csv` files.
 >
 > If you have time, you can also try to sort the results by piping it to `sort`.
 > And/or explore the other flags of `wc`.
