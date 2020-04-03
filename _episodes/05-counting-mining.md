@@ -471,7 +471,7 @@ $ mkdir results
 Now let's try our first search:
 
 ~~~
-$ grep irc *.csv
+$ grep Spatial *.csv
 ~~~
 {: .bash}
 
@@ -485,7 +485,7 @@ print the matching lines.
 {: .callout}
 
 Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep irc *.csv` to `grep -c Spatial *.csv` and hit enter.
+Amend `grep Spatial *.csv` to `grep -c Spatial *.csv` and hit enter.
 
 ~~~
 $ grep -c Spatial *.csv
