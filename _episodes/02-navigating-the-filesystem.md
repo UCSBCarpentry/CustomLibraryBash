@@ -34,7 +34,7 @@ $ pwd
 ~~~
 {: .bash}
 ~~~
-/Users/riley
+/Users/your.username
 ~~~
 {: .output}
 
@@ -66,14 +66,14 @@ $ ls -l
 {: .bash}
 ~~~
 total 0
-drwx------+  6 riley  staff   204 Jul 16 11:50 Desktop
-drwx------+  3 riley  staff   102 Jul 16 11:30 Documents
-drwx------+  3 riley  staff   102 Jul 16 11:30 Downloads
-drwx------@ 46 riley  staff  1564 Jul 16 11:38 Library
-drwx------+  3 riley  staff   102 Jul 16 11:30 Movies
-drwx------+  3 riley  staff   102 Jul 16 11:30 Music
-drwx------+  3 riley  staff   102 Jul 16 11:30 Pictures
-drwxr-xr-x+  5 riley  staff   170 Jul 16 11:30 Public
+drwx------+  6 user  user   204 Jul 16 11:50 Desktop
+drwx------+  3 user  user   102 Jul 16 11:30 Documents
+drwx------+  3 user  user   102 Jul 16 11:30 Downloads
+drwx------@ 46 user  user  1564 Jul 16 11:38 Library
+drwx------+  3 user  user   102 Jul 16 11:30 Movies
+drwx------+  3 user  user   102 Jul 16 11:30 Music
+drwx------+  3 user  user   102 Jul 16 11:30 Pictures
+drwxr-xr-x+  5 user  user   170 Jul 16 11:30 Public
 ~~~
 {: .output}
 
@@ -92,14 +92,14 @@ $ ls -lh
 {: .bash}
 ~~~
 total 0
-drwx------+  6 riley  staff   204B Jul 16 11:50 Desktop
-drwx------+  3 riley  staff   102B Jul 16 11:30 Documents
-drwx------+  3 riley  staff   102B Jul 16 11:30 Downloads
-drwx------@ 46 riley  staff   1.5K Jul 16 11:38 Library
-drwx------+  3 riley  staff   102B Jul 16 11:30 Movies
-drwx------+  3 riley  staff   102B Jul 16 11:30 Music
-drwx------+  3 riley  staff   102B Jul 16 11:30 Pictures
-drwxr-xr-x+  5 riley  staff   170B Jul 16 11:30 Public
+drwx------+  6 user  user   204B Jul 16 11:50 Desktop
+drwx------+  3 user  user   102B Jul 16 11:30 Documents
+drwx------+  3 user  user   102B Jul 16 11:30 Downloads
+drwx------@ 46 user  user   1.5K Jul 16 11:38 Library
+drwx------+  3 user  user   102B Jul 16 11:30 Movies
+drwx------+  3 user  user   102B Jul 16 11:30 Music
+drwx------+  3 user  user   102B Jul 16 11:30 Pictures
+drwxr-xr-x+  5 user  user   170B Jul 16 11:30 Public
 ~~~
 {: .output}
 
@@ -121,7 +121,7 @@ $ pwd
 ~~~
 {: .bash}
 ~~~
-/Users/riley/Desktop
+/Users/your.username/Desktop
 ~~~
 {: .output}
 
