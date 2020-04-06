@@ -114,27 +114,63 @@ $ head -n 3 Desk_Tracker.csv
 {: .bash}
 ~~~
 response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,Contact 
-Type,Contact Type (text),Question Type,Question Type (text),
-Reference   Research Type,Reference   Research Type (text),Reference   
-Research Type 2,Reference   Research Type 2 (text),Time Spent in 
-minutes,Comment,Reference   Research Type 3,Reference   Research Type 3 (text),Reference   
-Research Type 4,Reference   Research Type 4 (text)
-"43050","","2016-10-10 14:27:52","Interdisciplinary 
-Researc","RefBuddy","Interdisciplinary Research Collaboratory",
-"Interdisciplinary Research Collaboratory Desk","University of 
-California, Santa Barbara","In Person","","Reference / Research 
-Assistance","","Content","","Referred to Subject Librarian","","10","Crimson Hexagon 
-query re: 100 Twitter pickup for Korean keywords, 0 for Facebook. 
-Referred to Shari Laster.","","","","","43106","","2016-10-10 
-15:55:16","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory",
-"Interdisciplinary Research Collaboratory Desk","University of 
-California, Santa Barbara","In Person","","Reference / Research 
-Assistance","","Content","","","","10","Crimson Hexagon odd results.","","","",""
+Type,Contact Type (text),Question Type,Question Type 
+(text),Directional Informational Type,Directional 
+Informational Type (text),Time Spent in 
+minutes,Comment,Reference   Research Type,Reference   
+Research Type (text),Number of Participants,Instructor,Type 
+of Event,Type of Event (text),Date & Time,Unit Area Name,Unit 
+Area Name (text),How many patrons were in the Art & 
+Architecture Collection,Ref Question Type,Ref Question Type 
+(text),Directional   Informational Type,Directional   
+Informational Type (text),Comments,Reference  Research 
+Type,Reference  Research Type (text),Directional   
+Informational Type 2,Directional   Informational Type 2 
+(text),Directional   Informational Type 3,Directional   
+Informational Type 3 (text),Directional   Informational Type 
+4,Directional   Informational Type 4 (text),Directional   
+Informational Type 5,Directional   Informational Type 5 
+(text),Directional   Informational Type 6,Directional   
+Informational Type 6 (text),Directional   Informational Type 
+7,Directional   Informational Type 7 (text),Directional   
+Informational Type 8,Directional   Informational Type 8 
+(text),Directional   Informational Type 9,Directional   
+Informational Type 9 (text),Directional   Informational Type 
+10,Directional   Informational Type 10 (text),Directional   
+Informational Type 11,Directional   Informational Type 11 
+(text),Directional   Informational Type 12,Directional   
+Informational Type 12 (text),Directional   Informational Type 
+13,Directional   Informational Type 13 (text),Reference  
+Research Type 2,Reference  Research Type 2 (text),Reference  
+Research Type 3,Reference  Research Type 3 (text),Reference  
+Research Type 4,Reference  Research Type 4 (text),Question 
+Type 2,Question Type 2 (text),Reference   Research Type 
+2,Reference   Research Type 2 (text),Reference   Research 
+Type 3,Reference   Research Type 3 (text),Type of 
+Question,Type of Question (text),Time Spent on Question,Time 
+Spent on Question (text),Brief Description of 
+Question,Reference   Research Type 4,Reference   Research 
+Type 4 (text),Date   Time,Gate Count,Reference Research 
+Type,Reference Research Type (text),Question Type 
+required,Question Type required (text)
+"9898","","2016-01-04 08:00:00","Desk 
+Statistics","RefBuddy","Reference Services","Information 
+Desk","University of California, Santa Barbara","In 
+Person","","Directional / 
+Informational","","Directions/Locations (where to 
+find)","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+"9899","","2016-01-04 08:00:00","Desk 
+Statistics","RefBuddy","Reference Services","Information 
+Desk","University of California, Santa Barbara","In 
+Person","","Directional / 
+Informational","","Directions/Locations (where to 
+find)","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+"","","",""
 ~~~
 {: .output}
 
 In the header, we can see the common metadata fields of Desktracker: 
-`Question Type`, `Research Type`, `Library.
+`user`, `Research Type`, `Library.
 
 Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, and bytes.
@@ -500,11 +536,11 @@ $ grep -c Spatial *.csv
 ~~~
 {: .bash}
 ~~~
-Desk_Tracker.csv:102511
-Desk_Tracker_2016.csv:37951
-Desk_Tracker_2017.csv:26290
-Desk_Tracker_2018.csv:23261
-Desk_Tracker_2019.csv:15012
+Desk_Tracker.csv:374
+Desk_Tracker_2016.csv:9
+Desk_Tracker_2017.csv:63
+Desk_Tracker_2018.csv:190
+Desk_Tracker_2019.csv:112
 ~~~
 {: .output}
 
