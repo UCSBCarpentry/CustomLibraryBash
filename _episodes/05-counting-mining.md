@@ -170,7 +170,7 @@ find)","","","","","","","","","","","","","","","","","","","","","","","","","
 {: .output}
 
 In the header, we can see the common metadata fields of Desktracker: 
-`user`, `Research Type`, `Library.
+`user`, `Contact Type`, `library'.
 
 Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, and bytes.
