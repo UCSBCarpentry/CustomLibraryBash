@@ -97,7 +97,7 @@ learned in
 [Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
-$ cat Desk_Tracker_2016.csv
+$ cat Desk_Tracker.csv
 ~~~
 {: .bash}
 
@@ -109,7 +109,7 @@ In most data files a quick glimpse of the first few lines already tells us a lot
 about the structure of the dataset, for example the table/column headers:
 
 ~~~
-$ head -n 3 Desk_Tracker_2016.csv
+$ head -n 3 Desk_Tracker.csv
 ~~~
 {: .bash}
 ~~~
@@ -148,12 +148,12 @@ $ wc *.csv
 ~~~~
 {: .bash}
 ~~~
-
-    135    2393   41429 Desk_Tracker_2016.csv
-    749   12542  224850 Desk_Tracker_2017.csv
-    661   10941  192433 Desk_Tracker_2018.csv
-    347    6691  110833 Desk_Tracker_2019.csv
-   1892   32867  569545 total
+   122995   2171893  54797588 Desk_Tracker.csv
+    43842    757941  18654589 Desk_Tracker_2016.csv
+    31456    565013  12271344 Desk_Tracker_2017.csv
+    27274    491149   9833562 Desk_Tracker_2018.csv
+    20426    358164   6947675 Desk_Tracker_2019.csv
+   245993   4344160 102504758 total
 ~~~
 {: .output}
 
@@ -175,11 +175,12 @@ $ wc -l *.csv
 ~~~~
 {: .bash}
 ~~~
-    135 Desk_Tracker_2016.csv
-    749 Desk_Tracker_2017.csv
-    661 Desk_Tracker_2018.csv
-    347 Desk_Tracker_2019.csv
-   1892 total
+   122995 Desk_Tracker.csv
+    43842 Desk_Tracker_2016.csv
+    31456 Desk_Tracker_2017.csv
+    27274 Desk_Tracker_2018.csv
+    20426 Desk_Tracker_2019.csv
+   245993 total
 ~~~
 {: .output}
 
@@ -204,11 +205,12 @@ $ cat lengths.txt
 ~~~~
 {: .bash}
 ~~~
-    135 Desk_Tracker_2016.csv
-    749 Desk_Tracker_2017.csv
-    661 Desk_Tracker_2018.csv
-    347 Desk_Tracker_2019.csv	
-   1892 total
+   122995 Desk_Tracker.csv
+    43842 Desk_Tracker_2016.csv
+    31456 Desk_Tracker_2017.csv
+    27274 Desk_Tracker_2018.csv
+    20426 Desk_Tracker_2019.csv
+   245993 total
 ~~~
 {: .output}
 
@@ -222,11 +224,11 @@ $ cat sorted-lengths.txt
 ~~~~
 {: .bash}
 ~~~
-    135 Desk_Tracker_2016.csv
-    347 Desk_Tracker_2019.csv
-    661 Desk_Tracker_2018.csv
-    749 Desk_Tracker_2017.csv
-   1892 total
+    20426 Desk_Tracker_2019.csv
+    27274 Desk_Tracker_2018.csv
+    31456 Desk_Tracker_2017.csv
+    43842 Desk_Tracker_2016.csv
+   122995 Desk_Tracker.csv
 ~~~
 {: .output}
 
@@ -239,7 +241,7 @@ $ head -n 1 sorted-lengths.txt
 ~~~~
 {: .bash}
 ~~~
-     135 Desk_Tracker_2016.csv
+   20426 Desk_Tracker_2019.csv
 ~~~
 {: .output}
 
@@ -256,11 +258,12 @@ $ wc -l *.csv | sort -n
 ~~~~
 {: .bash}
 ~~~
-    135 Desk_Tracker_2016.csv
-    347 Desk_Tracker_2019.csv
-    661 Desk_Tracker_2018.csv
-    749 Desk_Tracker_2017
-   1892 total
+    20426 Desk_Tracker_2019.csv
+    27274 Desk_Tracker_2018.csv
+    31456 Desk_Tracker_2017.csv
+    43842 Desk_Tracker_2016.csv
+   122995 Desk_Tracker.csv
+   245993 total
 ~~~
 {: .output}
 
@@ -272,7 +275,7 @@ $ wc -l *.csv | sort -n | head -n 1
 ~~~~
 {: .bash}
 ~~~
-     135 Desk_Tracker_2016.csv
+   20426 Desk_Tracker_2019.csv
 ~~~
 {: .output}
 
@@ -429,11 +432,12 @@ programming languages.
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >     2393 Desk_Tracker_2016.csv
-> >    12542 Desk_Tracker_2017.csv
-> >    10941 Desk_Tracker_2018.csv
-> >     6991 Desk_Tracker_2019.csv
-> >    32867 total
+> >  2171893 Desk_Tracker.csv
+> >   757941 Desk_Tracker_2016.csv
+> >   565013 Desk_Tracker_2017.csv
+> >   491149 Desk_Tracker_2018.csv
+> >   358164 Desk_Tracker_2019.csv
+> >  4344160 total
 > > ~~~
 > > {: .output}
 > >
@@ -444,11 +448,12 @@ programming languages.
 > > ~~~
 > > {: .bash}
 > > ~~~
-> >     2393 Desk_Tracker_2016.csv
-> >     6991 Desk_Tracker_2019.csv
-> >    10941 Desk_Tracker_2018.csv
-> >    12542 Desk_Tracker_2017.csv
-> >    32867 total
+> >   358164 Desk_Tracker_2019.csv
+> >   491149 Desk_Tracker_2018.csv
+> >   565013 Desk_Tracker_2017.csv
+> >   757941 Desk_Tracker_2016.csv
+> >  2171893 Desk_Tracker.csv
+> >  4344160 total
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -495,28 +500,30 @@ $ grep -c Spatial *.csv
 ~~~
 {: .bash}
 ~~~
-Desk_Tracker_2016.csv:9
-Desk_Tracker_2017.csv:63
-Desk_Tracker_2018.csv:190
-Desk_Tracker_2019.csv:112
+Desk_Tracker.csv:102511
+Desk_Tracker_2016.csv:37951
+Desk_Tracker_2017.csv:26290
+Desk_Tracker_2018.csv:23261
+Desk_Tracker_2019.csv:15012
 ~~~
 {: .output}
 
-The shell now prints the number of times the string "Spatial" appeared in each 
-file.If you look at the output from the previous command, this tends to 
+The shell now prints the number of times the string "Spatial" appeared 
+in each file.If you look at the output from the previous command, this tends to 
 refer to the date field when counts were made on each floor.
 
 We will try another search:
 
 ~~~
-$ grep -c In Person *.csv
+$ grep -c Refer *.csv
 ~~~
 {: .bash}
 ~~~
-Desk_Tracker_2016.csv:134
-Desk_Tracker_2017.csv:748
-Desk_Tracker_2018.csv:644
-Desk_Tracker_2019.csv:343
+Desk_Tracker.csv:102511
+Desk_Tracker_2016.csv:37951
+Desk_Tracker_2017.csv:26290
+Desk_Tracker_2018.csv:23261
+Desk_Tracker_2019.csv:15012
 ~~~
 {: .output}
 
@@ -525,14 +532,15 @@ the files. Now, amend the above command to the below and observe how the
 output of each is different:
 
 ~~~
-$ grep -ci in person *.csv
+$ grep -ci in refer *.csv
 ~~~
 {: .bash}
 ~~~
-Desk_Tracker_2016.csv:135
-Desk_Tracker_2017.csv:749
-Desk_Tracker_2018.csv:645
-Desk_Tracker_2019.csv:344
+Desk_Tracker.csv:102543
+Desk_Tracker_2016.csv:37956
+Desk_Tracker_2017.csv:26299
+Desk_Tracker_2018.csv:23273
+Desk_Tracker_2019.csv:15018
 ~~~
 {: .output}
 
@@ -548,7 +556,7 @@ also use it to create subsets of tabulated data (or indeed any data)
 from one or multiple files.  
 
 ~~~
-$ grep -i Spatial *.csv
+$ grep -i Refer *.csv
 ~~~
 {: .bash}
 
@@ -557,7 +565,7 @@ This script looks in the defined files and prints any lines containing `spatial`
 filename (say this was a daily occurrence and we wanted to keep track of dates):
 
 ~~~
-$ grep -i spatial *.csv > results/$(date -I)i-spatial.csv
+$ grep -i spatial *.csv > results/$(date -I)_i-refer.csv
 ~~~
 {: .bash}
 
@@ -581,7 +589,7 @@ Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
 ~~~
-$ grep -iw Spatial *.csv > results/$(date -I)iw-spatial.csv
+$ grep -iw Refer *.csv > results/$(date -I)_iw-refer.csv
 ~~~
 {: .bash}
 
@@ -596,9 +604,9 @@ $ wc -l results/*.csv
 ~~~
 {: .bash}
 ~~~
-     376 i-spatial.csv
-     376 iw-spatial.csv
-     752 total
+  205089 i-spatial.csv
+      22 iw-spatial.csv
+  205111 total
 ~~~
 {: .output} 
 
