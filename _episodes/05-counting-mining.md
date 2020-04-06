@@ -521,7 +521,7 @@ $ grep Spatial *.csv
 
 Remember that the shell will expand `*.csv` to a list of all the `.csv` 
 files in the directory. `grep` will then search these for instances of 
-the string "irc" and
+the string "Spatial" and
 print the matching lines.
 
 > ## Strings
@@ -563,7 +563,7 @@ Desk_Tracker_2019.csv:15012
 ~~~
 {: .output}
 
-We got back the counts of the instances of the string `In Person` within 
+We got back the counts of the instances of the string `Refer` within 
 the files. Now, amend the above command to the below and observe how the 
 output of each is different:
 
@@ -581,7 +581,8 @@ Desk_Tracker_2019.csv:15018
 {: .output}
 
 This repeats the query, but prints a case
-insensitive count (including instances of both `in person` and `In Person` and other variants).
+insensitive count (including instances of both `refer` and `Refer` 
+and other variants).
 Note how the count has increased for the entries
 As before, cycling back and adding `> results/`, followed by a filename (ideally in .txt format), will save the 
 results to a data file.
@@ -601,7 +602,7 @@ This script looks in the defined files and prints any lines containing `spatial`
 filename (say this was a daily occurrence and we wanted to keep track of dates):
 
 ~~~
-$ grep -i spatial *.csv > results/$(date -I)_i-refer.csv
+$ grep -i Refer *.csv > results/$(date -I)_i-refer.csv
 ~~~
 {: .bash}
 
@@ -619,8 +620,8 @@ $ grep -i spatial *.csv > results/$(date -I)_i-refer.csv
 This saves the subsetted data to a new file.
 
 However, if we look at this file, it contains every instance of the
-string 'spatial' including as a single word and as part of other words
- such as 'spatially'. This perhaps isn't as useful as we thought...
+string 'refer' including as a single word and as part of other words
+ such as 'reference'. This perhaps isn't as useful as we thought...
 Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
@@ -640,8 +641,8 @@ $ wc -l results/*.csv
 ~~~
 {: .bash}
 ~~~
-  205089 i-spatial.csv
-      22 iw-spatial.csv
+  205089 i-refer.csv
+      22 iw-refer.csv
   205111 total
 ~~~
 {: .output} 
