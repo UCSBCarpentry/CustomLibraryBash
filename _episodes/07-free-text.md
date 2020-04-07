@@ -137,7 +137,9 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -r > gulliver-final.t
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link 
+_episodes/05-counting-extracting.md %}). The first part of this script uses the translate command again, this time to translate 
+every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -231,7 +233,9 @@ $ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link 
+_episodes/05-counting-extracting.md %}). The first part of this script uses the translate command again, this time to translate 
+every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -349,7 +353,9 @@ $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -r > diary-final.txt
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and extracting with the shell]({{ page.root }}{% link 
+_episodes/05-counting-extracting.md %}). The first part of this script uses the translate command again, this time to translate 
+every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
