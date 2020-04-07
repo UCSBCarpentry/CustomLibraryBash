@@ -12,7 +12,7 @@ ____
 Librarians like handouts. To make a handout for this lesson, adapt/print from [https://librarycarpentry.org/lc-shell/reference](https://librarycarpentry.org/lc-shell/reference).
 
 ______
-## 05-counting-mining.md
+## 05-counting-extracting.md
 
 This lesson notes that the `grep` flags `-o` and `-E` flag are not supported by Git Bash for Windows (see the callout 'Invalid option – o?'). Be prepared to manage these differences in shell behaviour between operating systems.
 
@@ -187,7 +187,8 @@ as long as learners using Windows do not run into roadblocks such as:
     extensions are essentially there to help computers (and human
     readers) understand file content and are not a requirement of files
     (covered briefly in [Navigating Files and Directories]({{ page.root }}{% link _episodes/02-navigating-the-filesystem.md %})).
-    This can be done in the [Pipes and Filters]({{ page.root }}{% link _episodes/05-counting-mining.md %}) section by showing that you
+    This can be done in the [Pipes and Filters]({{ page.root }}{% link _episodes/05-counting-extracting.md %}) section by showing 
+that you
     can redirect standard output to a file without the .txt extension
     (e.g., lengths), and that the resulting file is still a perfectly usable text file.
     Make the point that if double-clicked in the GUI, the computer will
