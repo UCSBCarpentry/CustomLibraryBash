@@ -360,6 +360,94 @@ programming languages.
 > {: .solution}
 {: .challenge}
 
+>>"43447", "2016-10-11 14:50:00", "In Person", "Reference / Research 
+Assistance"
+>>"43421", "2016-10-11 19:43:52", "In Person", "Directional / 
+Informational"
+>>"43580", "2016-10-12 15:20:49", "In Person", "Directional / 
+Informational"
+>>"43581", "2016-10-12 15:20:59", "In Person", "Directional / 
+Informational"
+>>"43590", "2016-10-12 16:06:24", "In Person", "Directional / 
+Informational"
+>>"43613", "2016-10-12 17:12:29", "In Person", "Reference / Research 
+Assistance"
+>>~~~
+>>{: .output}
+> {: .solution}
+{: .challenge}
+
+
+> ## Extracting data from DeskTracker
+> For instance, say we want to retain only the `response_set_id`, `date_time`, `Question Type`, and `Contact
+> Type` columns from our article data. With `cut` we'd:
+>
+>~~~
+>cut -f1,3,10,12 -d "," Desk_Tracker_2017.csv | head
+>~~~
+>{: .bash}
+>
+>~~~
+> response_set_id,date_time,Contact Type (text),Question Type (text)
+> "51530", "2017-01-03 08:02:32", "Personal Email", "Reference / Research Assistance"
+> "51800", "2017-01-09 14:57:27", "In Person", "Reference / Research Assistance"
+> "51801", "2017-01-09 14:57:47", "In Person", "Directional / Informational"
+> "52089", "2017-01-11 14:17:19", "In Person", "Reference / Research Assistance"
+> "52209", "2017-01-12 15:23:41", "In Person", "Directional / Informational"
+> "52240", "2017-01-12 18:51:06". "In Person", "Reference / Research Assistance"
+> "52335", "2017-01-13 15:06:25", "Personal Email", "Reference / Research Assistance"
+> "52336", "2017-01-13 15:07:19", "In Person", "Reference / Research Assistance"
+> "52337", "2017-01-13 15:07:33", "Personal Email", "Reference / Research Assistance"
+>~~~
+>{: .output}
+>
+> Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can 
+use th$
+> If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those 
+out.
+> ### Now your turn
+>>Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output
+>>into a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
+>> ## Solution
+>> First, let's see where our desired columns are:
+>>
+>>~~~
+>> head -n 1 Desk_Tracker_2016.csv
+>>~~~
+>>{: .bash}
+>>
+>>~~~
+>>response_set_id, parent_response_set_id, date_time, page, user, branch, desk, library, Contact Type, Contact
+Type (text), Question Type, Question Type (text)
+>>~~~
+>>{: .output}
+>>
+>>Ok, now we know `response_set_id` is column 1, `date_time` 3, `Contact Type` 10, and `Question Type` 12.
+>> We use these positional column numbers to construct our `cut` command:
+>>```
+>> cut -f1,3,10,12 -d "," Desk_Tracker_2016.csv > Desk_Tracker_2016_simp.csv
+>>```
+>> We can confirm this worked by running "head" on the file:
+>>```
+>>head Desk_Tracker_2016_simp.csv
+>>```
+>>~~~
+>>response_set_id,date_time,Contact Type (text),Question Type (text)
+>>"43050", "2016-10-10 14:27:52", "In Person", "Reference / Research Assistance"
+>>"43106", "2016-10-10 15:55:16", "In Person", "Reference / Research Assistance"
+>>"43161", "2016-10-10 18:57:35", "Collab Email", "Reference / Research Assistance"
+>>"43447", "2016-10-11 14:50:00", "In Person", "Reference / Research Assistance"
+>>"43421", "2016-10-11 19:43:52", "In Person", "Directional / Informational"
+>>"43580", "2016-10-12 15:20:49", "In Person", "Directional / Informational"
+>>"43581", "2016-10-12 15:20:59", "In Person", "Directional / Informational"
+>>"43590", "2016-10-12 16:06:24", "In Person", "Directional / Informational"
+>>"43613", "2016-10-12 17:12:29", "In Person", "Reference / Research Assistance"
+>>~~~
+>>{: .output}
+> {: .solution}
+{: .challenge}
+
+
 > ## Count, sort and print (faded example)
 >To count the total lines in every `csv` file, sort the results and then print the first line of the file we use the following:
 >
@@ -920,81 +1008,5 @@ returned lines that contained the value stored in `$name`, `wc -l` corresponds t
 > {: .solution}
 {: .challenge}
 
-## Selecting Columns from Datasets
-When you receive data it will often contain more columns or variables than you need for your work. If you want 
-to select only the columns you need for your analysis, you can use the 'cut' command to do so. 'cut' is a tool 
-for extracting sections from a file.
+ 
 
-> ## Using Delimiters with "cut"
->Sometimes we need to workaround datasets that haven't been cleaned for us. Normally, using the 'cut --f' flag 
->would extract the data, but that's assuming the data has already been cleaned. In our csv 
->files, the data has been separated by commas, so we must use a second flag, '--d' and use " " to indicate a 
->the type of delimiter that is being used to extract the data.
-{: .callout}
-
-> ## Extracting data from DeskTracker
-> For instance, say we want to retain only the `response_set_id`, `date_time`, `Question Type`, and `Contact 
-> Type` columns from our article data. With `cut` we'd:
-> 
->~~~ 
->cut -f1,3,10,12 -d "," Desk_Tracker_2017.csv | head 
->~~~
->{: .bash}
->
->~~~
-> response_set_id,date_time,Contact Type (text),Question Type (text)
-> "51530", "2017-01-03 08:02:32", "Personal Email", "Reference / Research Assistance"
-> "51800", "2017-01-09 14:57:27", "In Person", "Reference / Research Assistance"
-> "51801", "2017-01-09 14:57:47", "In Person", "Directional / Informational"
-> "52089", "2017-01-11 14:17:19", "In Person", "Reference / Research Assistance"
-> "52209", "2017-01-12 15:23:41", "In Person", "Directional / Informational" 
-> "52240", "2017-01-12 18:51:06". "In Person", "Reference / Research Assistance"
-> "52335", "2017-01-13 15:06:25", "Personal Email", "Reference / Research Assistance"
-> "52336", "2017-01-13 15:07:19", "In Person", "Reference / Research Assistance"
-> "52337", "2017-01-13 15:07:33", "Personal Email", "Reference / Research Assistance"
->~~~
->{: .output}
->
-> Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
-> If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
-> ### Now your turn
->>Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output 
->>into a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
->> ## Solution
->> First, let's see where our desired columns are:
->>
->>~~~
->> head -n 1 Desk_Tracker_2016.csv
->>~~~
->>{: .bash}
->>
->>~~~
->>response_set_id, parent_response_set_id, date_time, page, user, branch, desk, library, Contact Type, Contact 
-Type (text), Question Type, Question Type (text)
->>~~~
->>{: .output}
->>
->>Ok, now we know `response_set_id` is column 1, `date_time` 3, `Contact Type` 10, and `Question Type` 12.
->> We use these positional column numbers to construct our `cut` command:
->>```
->> cut -f1,3,10,12 -d "," Desk_Tracker_2016.csv > Desk_Tracker_2016_simp.csv
->>```
->> We can confirm this worked by running "head" on the file:
->>```
->>head Desk_Tracker_2016_simp.csv
->>```
->>~~~
->>response_set_id,date_time,Contact Type (text),Question Type (text)
->>"43050", "2016-10-10 14:27:52", "In Person", "Reference / Research Assistance"
->>"43106", "2016-10-10 15:55:16", "In Person", "Reference / Research Assistance"
->>"43161", "2016-10-10 18:57:35", "Collab Email", "Reference / Research Assistance"
->>"43447", "2016-10-11 14:50:00", "In Person", "Reference / Research Assistance"
->>"43421", "2016-10-11 19:43:52", "In Person", "Directional / Informational"
->>"43580", "2016-10-12 15:20:49", "In Person", "Directional / Informational"
->>"43581", "2016-10-12 15:20:59", "In Person", "Directional / Informational"
->>"43590", "2016-10-12 16:06:24", "In Person", "Directional / Informational"
->>"43613", "2016-10-12 17:12:29", "In Person", "Reference / Research Assistance"
->>~~~
->>{: .output}
-> {: .solution}
-{: .challenge}
