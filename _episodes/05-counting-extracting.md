@@ -1,7 +1,7 @@
 ---
-title: "Counting and mining with the shell"
-teaching: 60
-exercises: 30
+title: "Counting and extracting with the shell"
+teaching: 40
+exercises: 15
 questions:
 - "How can I count data?"
 - "How can I find data within files?"
@@ -356,22 +356,17 @@ programming languages.
 > > ~~~
 > > $ wc -l *.csv | sort -n | head -n 1 | cat
 > > ~~~
->> { .bash}
-
->>"43447", "2016-10-11 14:50:00", "In Person", "Reference / Research 
-Assistance"
->>"43421", "2016-10-11 19:43:52", "In Person", "Directional / 
-Informational"
->>"43580", "2016-10-12 15:20:49", "In Person", "Directional / 
-Informational"
->>"43581", "2016-10-12 15:20:59", "In Person", "Directional / 
-Informational"
->>"43590", "2016-10-12 16:06:24", "In Person", "Directional / 
-Informational"
->>"43613", "2016-10-12 17:12:29", "In Person", "Reference / Research 
-Assistance"
->>~~~
-{: .output}
+> > {: .bash}
+> >
+> > ~~~
+> >"43447", "2016-10-11 14:50:00", "In Person", "Reference / Research Assistance"
+> >"43421", "2016-10-11 19:43:52", "In Person", "Directional / Informational"
+> >"43580", "2016-10-12 15:20:49", "In Person", "Directional / Informational"
+> >"43581", "2016-10-12 15:20:59", "In Person", "Directional / Informational"
+> >"43590", "2016-10-12 16:06:24", "In Person", "Directional / Informational"
+> >"43613", "2016-10-12 17:12:29", "In Person", "Reference / Research Assistance"
+> > ~~~
+> > {: .output}
 > {: .solution}
 {: .challenge}
 
