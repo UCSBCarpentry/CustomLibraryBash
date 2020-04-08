@@ -33,7 +33,7 @@ $ pwd
 ~~~
 {: .bash}
 ~~~
-/Users/riley/Desktop/shell-lesson
+/Users/your.username/Desktop/shell-lesson
 ~~~
 {: .output}
 
@@ -79,11 +79,13 @@ $ ls -lh
 ~~~
 {: .bash}
 ~~~
+total 98M
+ 53M -rw-r--r-- 1 your.username 1049089  53M Apr  6 11:45 Desk_Tracker.csv
+ 18M -rw-r--r-- 1 your.username 1049089  18M Apr  6 10:02 Desk_Tracker_2016.csv
+ 12M -rw-r--r-- 1 your.username 1049089  12M Apr  6 10:38 Desk_Tracker_2017.csv
+9.4M -rw-r--r-- 1 your.username 1049089 9.4M Apr  6 10:39 Desk_Tracker_2018.csv
+6.7M -rw-r--r-- 1 your.username 1049089 6.7M Apr  6 10:41 Desk_Tracker_2019.csv
 total 1128
--rw-r--r--@ 1 jjablonski  1964856704    40K Mar 17 15:12 Desk_Tracker_2016.csv
--rw-r--r--@ 1 jjablonski  1964856704   220K Mar 17 15:14 Desk_Tracker_2017.csv
--rw-r--r--@ 1 jjablonski  1964856704   188K Mar 17 15:14 Desk_Tracker_2018.csv
--rw-r--r--@ 1 jjablonski  1964856704   108K Mar 17 15:15 Desk_Tracker_2019.csv
 ~~~
 {: .output}
 
