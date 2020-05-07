@@ -399,8 +399,8 @@ use th$
 > If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those 
 out.
 > ### Now your turn
->>Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output
->>into a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
+>Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output
+>into a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
 >> ## Solution
 >> First, let's see where our desired columns are:
 >>
