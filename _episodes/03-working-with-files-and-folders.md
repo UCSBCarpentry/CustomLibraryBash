@@ -127,8 +127,13 @@ $ head Desk_Tracker_2017.csv
 {: .output}
 
 This provides a view of the first ten lines, or as much of the first ten 
-lines as fits the width of your teminal. whereas `tail Desk_Tracker_2017.csv` 
-provides a perspective on the last ten lines:
+lines as fits the width of your teminal. 
+
+Your output might look different because the text is wrapping, making it even more 
+difficult to comprehend.  For standard Bash, you can disable line wrapping with `tput rmam` (`tput smam` re-enables it).
+
+Tail, you might guess `tail Desk_Tracker_2017.csv` 
+gets you the last ten lines:
 
 ~~~
 $ tail Desk_Tracker_2017.csv
