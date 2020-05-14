@@ -129,8 +129,7 @@ $ head Desk_Tracker_2017.csv
 This provides a view of the first ten lines, or as much of the first ten 
 lines as fits the width of your teminal. 
 
-Your output might look different because the text is wrapping, making it even more 
-difficult to comprehend.  For standard Bash, you can disable line wrapping with `tput rmam` (`tput smam` re-enables it).
+Mac Terminal users: you can renable line wrapping with `tput smam`.
 
 Tail, you might guess `tail Desk_Tracker_2017.csv` 
 gets you the last ten lines:
