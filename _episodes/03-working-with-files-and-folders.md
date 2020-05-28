@@ -246,7 +246,7 @@ giving it the old name as the first argument and the new name as the second
 argument:
 
 ~~~
-$ mv mv Desk_Tracker_2016.csv CollabStats_2016.csv
+$ mv Desk_Tracker_2016.csv CollabStats_2016.csv
 ~~~
 {: .bash}
 
