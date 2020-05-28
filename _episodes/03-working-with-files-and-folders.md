@@ -127,8 +127,12 @@ $ head Desk_Tracker_2017.csv
 {: .output}
 
 This provides a view of the first ten lines, or as much of the first ten 
-lines as fits the width of your teminal. whereas `tail Desk_Tracker_2017.csv` 
-provides a perspective on the last ten lines:
+lines as fits the width of your teminal. 
+
+Mac Terminal users: you can renable line wrapping with `tput smam`.
+
+Tail, you might guess `tail Desk_Tracker_2017.csv` 
+gets you the last ten lines:
 
 ~~~
 $ tail Desk_Tracker_2017.csv
