@@ -359,12 +359,7 @@ programming languages.
 > > {: .bash}
 > >
 > > ~~~
-> >"43447", "2016-10-11 14:50:00", "In Person", "Reference / Research Assistance"
-> >"43421", "2016-10-11 19:43:52", "In Person", "Directional / Informational"
-> >"43580", "2016-10-12 15:20:49", "In Person", "Directional / Informational"
-> >"43581", "2016-10-12 15:20:59", "In Person", "Directional / Informational"
-> >"43590", "2016-10-12 16:06:24", "In Person", "Directional / Informational"
-> >"43613", "2016-10-12 17:12:29", "In Person", "Reference / Research Assistance"
+> > 20426 Desk_Tracker_2019.csv
 > > ~~~
 > > {: .output}
 > {: .solution}
