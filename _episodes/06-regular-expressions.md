@@ -107,6 +107,18 @@ Desk_Tracker_2019.csv:15018
 ~~~
 {: .output}
 
+> ## Count words (case insensitive)
+> Count all case insensitive instances of that word in the '2019' `.csv` files
+> in this directory. Print your results to the shell.
+>
+> > ## Solution
+> > ~~~
+> > $ grep -ci arcpro *2019.csv
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
 This repeats the query, but prints a case
 insensitive count (including instances of both `refer` and `Refer` 
 and other variants).
@@ -119,13 +131,7 @@ file those counts. But the real power of `grep` comes in that you can
 also use it to create subsets of tabulated data (or indeed any data)
 from one or multiple files.  
 
-~~~
-$ grep -i Refer *.csv
-~~~
-{: .bash}
-
-This script looks in the defined files and prints any lines containing `spatial`
-(without regard to case) to the shell. We let the shell add today's date to the
+We can let the shell add today's date to the
 filename (say this was a daily occurrence and we wanted to keep track of dates):
 
 ~~~
@@ -158,7 +164,7 @@ $ grep -iw Refer *.csv > results/$(date -I)_iw-refer.csv
 {: .bash}
 
 This script looks in both of the defined files and
-exports any lines containing the whole word `spatial` (without regard to case)
+exports any lines containing the whole word `refer` (without regard to case)
 to the specified `.csv` file.
 
 We can show the difference between the files we created.
@@ -174,6 +180,19 @@ $ wc -l results/*.csv
 ~~~
 {: .output} 
 
+
+> ## Case insensitive search in select files (whole word)
+> Search for all case insensitive instances of that whole word
+> in the '2019' `.csv` files in this directory. Print 
+your results to a file `results/2019-i.csv`.
+>
+> > ## Solution
+> > ~~~
+> > $ grep -iw arcpro *2019.csv > results/arcpro_2019-i.csv
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
 
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
@@ -214,86 +233,6 @@ $ grep -iwEo 'Cont[ae][cn]t' *.csv
 > really needed the flag, however, you could have installed another version of `grep`. The situation for Windows users
 > also improves on Windows 10 with the new Bash on Windows.
 {: .callout}
-
-Pair up with your neighbor and work on these exercises:
-
-> ## Case sensitive search
-> Search for all case sensitive instances of
-> a whole word you choose in all four derived `.csv` files in this 
-directory.
-> Print your results to the shell.
->
-> > ## Solution
-> > ~~~
- > > $ grep -w arcpro *.csv
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Case sensitive search in select files
-> Search for all case sensitive instances of a word you choose in
-> the '2018' `.csv` files in this directory.
-> Print your results to the shell.
->
-> > ## Solution
-> > ~~~
-> > $ grep arcpro *2018.csv
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Count words (case sensitive)
-> Count all case sensitive instances of a word you choose in
-> the '2019' `.csv` files in this directory.
-> Print your results to the shell.
->
-> > ## Solution
-> > ~~~
-> > $ grep -c arcpro *2019.csv
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Count words (case insensitive)
-> Count all case insensitive instances of that word in the '2019' `.csv` files
-> in this directory. Print your results to the shell.
->
-> > ## Solution
-> > ~~~
-> > $ grep -ci arcpro *2019.csv
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Case insensitive search in select files
-> Search for all case insensitive instances of that
-> word in the '2019' `.csv` files in this directory. 
-Print your results to  a file `results/2019.csv`.
->
-> > ## Solution
-> > ~~~
-> > $ grep -i arcpro *2019.csv > results/arcpro_2019.csv
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Case insensitive search in select files (whole word)
-> Search for all case insensitive instances of that whole word
-> in the '2019' `.csv` files in this directory. Print 
-your results to a file `results/2019-i.csv`.
->
-> > ## Solution
-> > ~~~
-> > $ grep -iw arcpro *2019.csv > results/arcpro_2019-i.csv
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
 
 > ## Searching with regular expressions
 > Use regular expressions to find all ISSN numbers
