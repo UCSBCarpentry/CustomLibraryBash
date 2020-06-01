@@ -203,7 +203,6 @@ response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
 "51540","","2017-01-03 09:32:00","Desk Statistics","RefBuddy","Reference Servic"
 (base)
 
-
 ==> Desk_Tracker_2016.csv <==
 response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
 "9898","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
