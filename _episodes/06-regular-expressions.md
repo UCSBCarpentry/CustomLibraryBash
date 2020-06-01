@@ -106,7 +106,7 @@ matters in 2018.
 > > the file.
 {: .challenge}
 
-We will try another search:
+Let's try another search:
 
 ~~~
 $ grep -c Refer *.csv
@@ -138,24 +138,27 @@ Desk_Tracker_2019.csv:15018
 ~~~
 {: .output}
 
+Just like spatial, reference appears just a few times more in the file.
+
 > ## Count words (case insensitive)
-> Count all case insensitive instances of that word in the '2019' `.csv` files
-> in this directory. Print your results to the shell.
+> We answer questions about Esri software, ArcPro. But we often type arcpro, 
+> ArcPro, and Arcpro.  Count all case insensitive instances of this in the 
+> DeskTracker files in this directory. Print your results to the shell.  What year did
+> we answer the most questions about ArcPro?
 >
 > > ## Solution
 > > ~~~
-> > $ grep -ci arcpro *2019.csv
+> > $ grep -ci arcpro *.csv
 > > ~~~
 > > {: .bash}
+> > This repeats the query, but prints a case
+> > insensitive count.
+> > As before, adding `> results/`, followed by a filename, will save the 
+> > results to a data file.
+
 > {: .solution}
 {: .challenge}
 
-This repeats the query, but prints a case
-insensitive count (including instances of both `refer` and `Refer` 
-and other variants).
-Note how the count has increased for the entries
-As before, cycling back and adding `> results/`, followed by a filename (ideally in .txt format), will save the 
-results to a data file.
 
 So far we have counted strings in files and printed to the shell or to
 file those counts. But the real power of `grep` comes in that you can
@@ -166,7 +169,7 @@ We can let the shell add today's date to the
 filename (say this was a daily occurrence and we wanted to keep track of dates):
 
 ~~~
-$ grep -i Refer *.csv > results/$(date -I)_i-refer.csv
+$ grep -i refer *.csv > results/$(date -I)_i-refer.csv
 ~~~
 {: .bash}
 
@@ -187,7 +190,8 @@ However, if we look at this file, it contains every instance of the
 string 'refer' including as a single word and as part of other words
  such as 'reference'. This perhaps isn't as useful as we thought...
 Thankfully, the `-w` flag instructs `grep` to look for whole words only,
-giving us greater precision in our search.
+giving us greater precision in our search--in this case to find where questions
+were referred to other librarians.
 
 ~~~
 $ grep -iw Refer *.csv > results/$(date -I)_iw-refer.csv
