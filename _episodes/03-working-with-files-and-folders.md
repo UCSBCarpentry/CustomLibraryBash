@@ -181,28 +181,15 @@ To save some typing, we introduce a very useful trick first.
 > function and something we'll use a lot.
 {: .callout}
 
-Hit the up arrow until you get to the `head Desk_Tracker_2016.csv` 
-command. Add a space and then `Desk_Tracker_2017.csv` to produce the 
+Hit the up arrow until you get to the `head Desk_Tracker_2017.csv` 
+command. Add a space and then `Desk_Tracker_2016.csv` to produce the 
 following command:
 
 ~~~
-$ head Desk_Tracker_2016.csv Desk_Tracker_2017.csv 
+$ head Desk_Tracker_2017.csv Desk_Tracker_2016.csv 
 ~~~
 {: .bash}
 ~~~
-
-==> Desk_Tracker_2016.csv <==
-response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
-"9898","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
-"9899","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
-"9900","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
-"11582","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
-"11583","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
-"11584","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
-"11585","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
-"11586","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
-"11587","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
-
 ==> Desk_Tracker_2017.csv <==
 response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
 "51530","","2017-01-03 08:02:32","Interdisciplinary Researc","RefBuddy","Interd"
@@ -215,6 +202,19 @@ response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
 "51539","","2017-01-03 09:11:07","MILrefdesk","RefBuddy","Map and Imagery Lab","
 "51540","","2017-01-03 09:32:00","Desk Statistics","RefBuddy","Reference Servic"
 (base)
+
+
+==> Desk_Tracker_2016.csv <==
+response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
+"9898","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
+"9899","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
+"9900","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
+"11582","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11583","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11584","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11585","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11586","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11587","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
 ~~~
 {: .output}
 
