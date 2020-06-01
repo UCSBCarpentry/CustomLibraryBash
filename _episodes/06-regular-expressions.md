@@ -78,6 +78,30 @@ the output from the previous command, and remember that we confirmed the names o
 accurately reflect the years, you can surmise that we answered the most questions about 'spatial' 
 matters in 2018.
 
+> # Is grep case sensitive?
+> Now try searching for 'spatial' vs. 'Spatial'.  
+> Why are the answers different? Should we add the results of 'spatial' to 'Spatial' when
+> counting reference questions?
+> > ## Solution
+> > ~~~
+> > $ grep -c spatial *.csv
+> > ~~~
+> > returns just a few results (1, 0, 5, 2)
+> > ~~~
+> > $ grep -c Spatial *.csv
+> > ~~~
+> > returns many more each year.
+> >
+> > The DeskTracker system has a checkbox for "Spatial" questions.
+> > "spatial" is within text comments:
+> > ~~~
+> > $ grep spatial *.csv
+> > ~~~
+> > The above will output the lines to confirm this.
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
 We will try another search:
 
 ~~~
