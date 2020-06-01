@@ -41,17 +41,17 @@ $ mkdir results
 
 Now let's try our first search.  `cd desktrackers`.  DeskTracker is the system we use to record desk 
 statistics in various places in the Library. It's reports are all Flash-driven, and today I just want
-to explore the raw data to see what it looks like.
+to explore the raw data to see how much GIS, or spatial data, service we give in the Library.
 
 ~~~
 $ grep Spatial *.csv
 ~~~
 {: .bash}
 
-Remember that the shell will expand `*.csv` to a list of all the `.csv` 
-files in the directory. `grep` will then search these for instances of 
-the string "Spatial" in the raw datafiles and
-print all of the the matching lines, which will look like gobbledy-gook. Re-run the command with pipe `| more` to  see the data one line at a time.
+Remember that the shell will expand `*.csv` to a list of all the `.csv` files in the directory. 
+`grep` will then search these for instances of the string "Spatial" in the raw datafiles and print 
+all of the the matching lines, which will look like gobbledy-gook. Re-run the command with pipe `| 
+more` to see the data one line at a time.  Remember that it's `q` for quit at a colon prompt.
 
 > ## Strings
 > A string is a sequence of characters, or "a piece of text".
@@ -73,9 +73,10 @@ Desk_Tracker_2019.csv:112
 ~~~
 {: .output}
 
-The shell now prints the number of times the string "Spatial" appeared 
-in each file.If you look at the output from the previous command, this tends to 
-refer to the date field when counts were made on each floor.
+The shell now prints the number of times the string "Spatial" appeared in each file. If you look at 
+the output from the previous command, and remember that we confirmed the names of the files 
+accurately reflect the years, you can surmise that we answered the most questions about 'spatial' 
+matters in 2018.
 
 We will try another search:
 
@@ -92,9 +93,9 @@ Desk_Tracker_2019.csv:15012
 ~~~
 {: .output}
 
-We got back the counts of the instances of the string `Refer` within 
-the files. Now, amend the above command to the below and observe how the 
-output of each is different:
+We got back the counts of the instances of the string `Refer` within the files. It looks like 
+reference volume has been steadily falling.  Now, amend the above command to the below and observe 
+how the output of each is different:
 
 ~~~
 $ grep -ci in refer *.csv
