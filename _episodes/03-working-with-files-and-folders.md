@@ -181,9 +181,9 @@ To save some typing, we introduce a very useful trick first.
 > function and something we'll use a lot.
 {: .callout}
 
-Hit the up arrow until you get to the `head 829-0.txt` command. Add a space
-and then `33504-0.txt` (Remember your friend Tab? Type `3` followed by Tab to
-get `33504-0.txt`), to produce the following command:
+Hit the up arrow until you get to the `head Desk_Tracker_2016.csv` 
+command. Add a space and then `Desk_Tracker_2017.csv` to produce the 
+following command:
 
 ~~~
 $ head Desk_Tracker_2016.csv Desk_Tracker_2017.csv 
@@ -255,7 +255,7 @@ $ mv Desk_Tracker_2016.csv CollabStats_2016.csv
 
 This is equivalent to the 'rename file' function.
 
-Afterwards, when we perform a `ls` command, we will see that it is now called `gulliver.txt`:
+Afterwards, when we perform a `ls` command, we will see that it is now called `CollabStats_2016.csv`:
 
 ~~~
 $ ls
