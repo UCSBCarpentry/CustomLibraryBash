@@ -3,7 +3,6 @@ title: "Regular Expressions"
 teaching: 40
 exercises: 15
 questions:
-- "How can I count data?"
 - "How can I find data within files?"
 - "How can I combine existing commands to do new things?"
 objectives:
