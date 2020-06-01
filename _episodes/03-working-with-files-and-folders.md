@@ -107,7 +107,7 @@ few lines of the file above this prompt.
 > You might not be able to tell line from line if your Shell is wrapping 
 > the lines of text.  Users can use the command `tput rmam` to disable 
 > line wrapping and ' tput smam' to enable line wrapping
-{: callout}
+{: .callout}
 
 Often we just want a quick glimpse of the first or the last part of a file to
 get an idea about what the file is about. To let us do that, the Unix shell
@@ -132,8 +132,6 @@ $ head Desk_Tracker_2017.csv
 
 This provides a view of the first ten lines, or as much of the first ten 
 lines as fits the width of your terminal. 
-
-Mac Terminal users: you can renable line wrapping with `tput smam`.
 
 Tail, you might guess `tail Desk_Tracker_2017.csv` 
 gets you the last ten lines:
