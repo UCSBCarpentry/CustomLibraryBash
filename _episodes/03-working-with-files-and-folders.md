@@ -106,7 +106,7 @@ few lines of the file above this prompt.
 > ## Wrapping and Unwrapping Text 
 > You might not be able to tell line from line if your Shell is wrapping 
 > the lines of text.  Users can use the command `tput rmam` to disable 
-> line wrapping and 'tput smam' to enable line wrapping
+> line wrapping and `tput smam` to enable line wrapping
 {: .callout}
 
 Often we just want a quick glimpse of the first or the last part of a file to
