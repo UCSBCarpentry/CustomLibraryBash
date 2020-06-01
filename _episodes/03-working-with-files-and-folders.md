@@ -99,11 +99,15 @@ $ cat Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 
-The terminal window erupts and the whole book cascades by (it is printed to
-your terminal), leaving us with a new prompt and the last few lines of the file
-above this prompt.  Moreover, you might not be able to tell line from line if your
-Shell is wrapping the lines of text.  Mac Terminal users can use the command
-`tput rmam` to disable line wrapping.
+The terminal window erupts and the whole book cascades by (it is
+printed to your terminal), leaving us with a new prompt and the last 
+few lines of the file above this prompt.  
+
+> # Wrapping and Unwrapping Text 
+> You might not be able to tell line from line if your Shell is wrapping 
+> the lines of text.  Users can use the command `tput rmam` to disable 
+> line wrapping and ' tput smam' to enable line wrapping
+{: callout}
 
 Often we just want a quick glimpse of the first or the last part of a file to
 get an idea about what the file is about. To let us do that, the Unix shell
@@ -127,7 +131,7 @@ $ head Desk_Tracker_2017.csv
 {: .output}
 
 This provides a view of the first ten lines, or as much of the first ten 
-lines as fits the width of your teminal. 
+lines as fits the width of your terminal. 
 
 Mac Terminal users: you can renable line wrapping with `tput smam`.
 
@@ -183,7 +187,7 @@ and then `33504-0.txt` (Remember your friend Tab? Type `3` followed by Tab to
 get `33504-0.txt`), to produce the following command:
 
 ~~~
-$ head 829-0.txt 33504-0.txt
+$ head Desk_Tracker_2016.csv Desk_Tracker_2017.csv 
 ~~~
 {: .bash}
 ~~~
