@@ -118,15 +118,16 @@ $ head Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 ~~~
-"51530","","2017-01-03 08:02:32","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"51800","","2017-01-09 14:57:27","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"51801","","2017-01-09 14:57:47","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"52089","","2017-01-11 14:17:19","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"52209","","2017-01-12 15:23:41","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"52240","","2017-01-12 18:51:06","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"52335","","2017-01-13 15:06:25","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"52336","","2017-01-13 15:07:19","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"52337","","2017-01-13 15:07:33","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
+"51530","","2017-01-03 08:02:32","Interdisciplinary Researc","RefBuddy","Interd"
+"51531","","2017-01-03 08:08:52","Desk Statistics","RefBuddy","Reference Servic"
+"51532","","2017-01-03 08:08:58","Desk Statistics","RefBuddy","Reference Servic"
+"51533","","2017-01-03 08:17:26","Desk Statistics","RefBuddy","Reference Servic"
+"51534","","2017-01-03 08:57:08","Desk Statistics","RefBuddy","Reference Servic"
+"51535","","2017-01-03 08:58:52","Desk Statistics","RefBuddy","Reference Servic"
+"51538","","2017-01-03 09:10:46","MILrefdesk","RefBuddy","Map and Imagery Lab","
+"51539","","2017-01-03 09:11:07","MILrefdesk","RefBuddy","Map and Imagery Lab","
+"51540","","2017-01-03 09:32:00","Desk Statistics","RefBuddy","Reference Servic"
 ~~~
 {: .output}
 
@@ -141,16 +142,16 @@ $ tail Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 ~~~
-"82755","","2017-12-06 15:01:28","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"82761","","2017-12-06 15:13:11","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"82887","","2017-12-07 16:00:26","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"82893","","2017-12-07 17:33:35","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"82945","","2017-12-08 13:12:59","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"82954","","2017-12-08 14:12:34","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"83122","","2017-12-12 16:17:00","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interd 
-"83123","","2017-12-13 14:18:44","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"83154","","2017-12-15 09:57:01","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
-"83255","","2017-12-22 11:00:00","Interdisciplinary Researc","RefBuddy","Interdisciplinary Research Collaboratory","Interdi
+"83263","","2017-12-23 11:59:15","Desk Statistics","RefBuddy","Reference Servic"
+"83264","","2017-12-23 12:14:54","Desk Statistics","RefBuddy","Reference Servic"
+"83265","","2017-12-23 12:28:24","Desk Statistics","RefBuddy","Reference Servic"
+"83266","","2017-12-23 12:51:42","Desk Statistics","RefBuddy","Reference Servic"
+"83267","","2017-12-23 13:37:52","Desk Statistics","RefBuddy","Reference Servic"
+"83268","","2017-12-23 13:44:48","Desk Statistics","RefBuddy","Reference Servic"
+"83269","","2017-12-23 14:21:14","Desk Statistics","RefBuddy","Reference Servic"
+"83270","","2017-12-23 14:41:58","Desk Statistics","RefBuddy","Reference Servic"
+"83271","","2017-12-23 14:42:15","Desk Statistics","RefBuddy","Reference Servic"
+"83272","","2017-12-23 14:42:35","Desk Statistics","RefBuddy","Reference Servic"
 ~~~
 {: .output}
 
@@ -189,31 +190,31 @@ $ head Desk_Tracker_2016.csv Desk_Tracker_2017.csv
 ~~~
 {: .bash}
 ~~~
+
 ==> Desk_Tracker_2016.csv <==
-response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,C
-"43050","","2016-10-10 14:27:52","Interdisciplinary Researc","RefBuddy","Interdi
-"43106","","2016-10-10 15:55:16","Interdisciplinary Researc","RefBuddy","Interdi
-"43161","","2016-10-10 18:57:35","Interdisciplinary Researc","RefBuddy","Interdi
-"43447","","2016-10-11 14:50:00","Interdisciplinary Researc","RefBuddy","Interdi
-"43421","","2016-10-11 19:43:52","Interdisciplinary Researc","RefBuddy","Interdi
-"43580","","2016-10-12 15:20:49","Interdisciplinary Researc","RefBuddy","Interdi
-"43581","","2016-10-12 15:20:59","Interdisciplinary Researc","RefBuddy","Interdi
-"43590","","2016-10-12 16:06:24","Interdisciplinary Researc","RefBuddy","Interdi
-"43613","","2016-10-12 17:12:29","Interdisciplinary Researc","RefBuddy","Interdi
+response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
+"9898","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
+"9899","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
+"9900","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Service"
+"11582","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11583","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11584","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11585","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11586","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
+"11587","","2016-01-04 08:00:00","Desk Statistics","RefBuddy","Reference Servic"
 
 ==> Desk_Tracker_2017.csv <==
-response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,C
-"51530","","2017-01-03 08:02:32","Interdisciplinary Researc","RefBuddy","Interdi
-"51800","","2017-01-09 14:57:27","Interdisciplinary Researc","RefBuddy","Interdi
-"51801","","2017-01-09 14:57:47","Interdisciplinary Researc","RefBuddy","Interdi
-"52089","","2017-01-11 14:17:19","Interdisciplinary Researc","RefBuddy","Interdi
-"52209","","2017-01-12 15:23:41","Interdisciplinary Researc","RefBuddy","Interdi
-"52240","","2017-01-12 18:51:06","Interdisciplinary Researc","RefBuddy","Interdi
-"52335","","2017-01-13 15:06:25","Interdisciplinary Researc","RefBuddy","Interdi
-"52336","","2017-01-13 15:07:19","Interdisciplinary Researc","RefBuddy","Interdi
-"52337","","2017-01-13 15:07:33","Interdisciplinary Researc","RefBuddy","Interdi
-(base) MIL01-S6AF:desktrackers jjablonski$ 
-
+response_set_id,parent_response_set_id,date_time,page,user,branch,desk,library,)
+"51530","","2017-01-03 08:02:32","Interdisciplinary Researc","RefBuddy","Interd"
+"51531","","2017-01-03 08:08:52","Desk Statistics","RefBuddy","Reference Servic"
+"51532","","2017-01-03 08:08:58","Desk Statistics","RefBuddy","Reference Servic"
+"51533","","2017-01-03 08:17:26","Desk Statistics","RefBuddy","Reference Servic"
+"51534","","2017-01-03 08:57:08","Desk Statistics","RefBuddy","Reference Servic"
+"51535","","2017-01-03 08:58:52","Desk Statistics","RefBuddy","Reference Servic"
+"51538","","2017-01-03 09:10:46","MILrefdesk","RefBuddy","Map and Imagery Lab","
+"51539","","2017-01-03 09:11:07","MILrefdesk","RefBuddy","Map and Imagery Lab","
+"51540","","2017-01-03 09:32:00","Desk Statistics","RefBuddy","Reference Servic"
+(base)
 ~~~
 {: .output}
 
