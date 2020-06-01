@@ -31,7 +31,7 @@ is therefore only limited by your imagination, the shape of your data, and - whe
 working with thousands or millions of files - the processing power at your disposal.
 
 To begin using `grep`, first navigate to the `shell-lesson` directory if not already
-there. Then create a new directory "results":
+there. Then create a new directory "results." We'll use this later:
 
 ~~~
 $ mkdir results
@@ -39,7 +39,9 @@ $ mkdir results
 {: .bash}
 
 
-Now let's try our first search:
+Now let's try our first search.  `cd desktrackers`.  DeskTracker is the system we use to record desk 
+statistics in various places in the Library. It's reports are all Flash-driven, and today I just want
+to explore the raw data to see what it looks like.
 
 ~~~
 $ grep Spatial *.csv
@@ -48,8 +50,8 @@ $ grep Spatial *.csv
 
 Remember that the shell will expand `*.csv` to a list of all the `.csv` 
 files in the directory. `grep` will then search these for instances of 
-the string "Spatial" and
-print the matching lines.
+the string "Spatial" in the raw datafiles and
+print all of the the matching lines, which will look like gobbledy-gook. Re-run the command with pipe `| more` to  see the data one line at a time.
 
 > ## Strings
 > A string is a sequence of characters, or "a piece of text".
