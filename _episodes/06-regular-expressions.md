@@ -95,13 +95,15 @@ matters in 2018.
 > > "spatial" is within text comments:
 > > ~~~
 > > $ grep spatial *.csv
-> > ~~~
 > > The above will output the lines to confirm this, but it's hard to read.
 > > Use a pipe to output your output to a file in the results directory
-> > `grep spatial *.csv | ../results/isGrepCaseSensitive.csv` 
+> > ~~~
 > > {: .bash}
+> > `grep spatial *.csv | ../results/isGrepCaseSensitive.csv` 
 > > Insert image here?
 > {: .solution}
+> > If you open that file in nano, you can `^w` to search for text in
+> > the file.
 {: .challenge}
 
 We will try another search:
