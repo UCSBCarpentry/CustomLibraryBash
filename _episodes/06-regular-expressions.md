@@ -77,10 +77,10 @@ the output from the previous command, and remember that we confirmed the names o
 accurately reflect the years, you can surmise that we answered the most questions about 'spatial' 
 matters in 2018.
 
-> # Is grep case sensitive?
+> ## Is grep case sensitive?
 > Now try searching for 'spatial' vs. 'Spatial'.  
 > Why are the answers different? Should we add the results of 'spatial' to 'Spatial' when
-> counting reference questions?
+> counting questions?
 > > ## Solution
 > > ~~~
 > > $ grep -c spatial *.csv
@@ -96,8 +96,11 @@ matters in 2018.
 > > ~~~
 > > $ grep spatial *.csv
 > > ~~~
-> > The above will output the lines to confirm this.
+> > The above will output the lines to confirm this, but it's hard to read.
+> > Use a pipe to output your output to a file in the results directory
+> > `grep spatial *.csv | ../results/isGrepCaseSensitive.csv` 
 > > {: .bash}
+> > Insert image here?
 > {: .solution}
 {: .challenge}
 
