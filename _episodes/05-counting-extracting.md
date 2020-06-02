@@ -1,7 +1,7 @@
 ---
 title: "Counting and extracting with the shell"
-teaching: 40
-exercises: 15
+teaching: 20
+exercises: 20
 questions:
 - "How can I count data?"
 - "How can I find data within files?"
