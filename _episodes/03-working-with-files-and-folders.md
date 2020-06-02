@@ -317,19 +317,19 @@ CollabStats_2016.csv	Desk_Tracker_2017.csv	Desk_Tracker_2018.csv	Desk_Tracker_20
 {: .challenge}
 
 <!-- > ## The wildcards and regular expressions -->
->
-> The `?` wildcard matches one character. The `*` wildcard matches zero or
-> more characters. If you attended the lesson on regular expressions, do you
-> remember how you would express that as regular expressions?
->
-> (Regular expressions are not a feature of the shell, but some commands support
-> them. We'll get back to that.)
->
-> > ## Answer
+
+<!--  The `?` wildcard matches one character. The `*` wildcard matches 
+> zero or more characters. If you attended the lesson on regular 
+> expressions, do you remember how you would express that as regular 
+> expressions?
+
+(Regular expressions are not a feature of the shell, but some commands support
+them. We'll get back to that.)
+## Answer
 > > * The `?` wildcard matches the regular expression `.` (a dot)
 > > * The `*` wildcard matches the regular expression `.*`
 > {: .solution}
-{: .challenge}
+{: .challenge} -->
 
 > ## Using `history`
 > Use the `history` command to see a list of all the commands you've entered during the 
