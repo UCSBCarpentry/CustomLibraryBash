@@ -140,13 +140,13 @@ Desk_Tracker_2019.csv:15018
 
 Just like spatial, reference appears just a few times more in the file.
 
-> ## Count words (case insensitive)
+> ### Count words (case insensitive)
 > We answer questions about Esri software, ArcPro. But we often type arcpro, 
 > ArcPro, and Arcpro.  Count all case insensitive instances of this in the 
 > DeskTracker files in this directory. Print your results to the shell.  What year did
 > we answer the most questions about ArcPro?
 >
-> > ## Solution
+> > ### Solution
 > > ~~~
 > > $ grep -ci arcpro *.csv
 > > ~~~
@@ -155,7 +155,6 @@ Just like spatial, reference appears just a few times more in the file.
 > > insensitive count.
 > > As before, adding `> results/`, followed by a filename, will save the 
 > > results to a data file.
-
 > {: .solution}
 {: .challenge}
 
