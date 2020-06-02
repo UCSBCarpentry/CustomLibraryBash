@@ -491,7 +491,6 @@ Type (text), Question Type, Question Type (text)
 >~~~
 >__ -w *.csv | sort __ | ____
 >~~~
->{: .bash}
 >
 > > ## Solution
 > >
