@@ -395,7 +395,7 @@ use th$
 out.
 > ### Now your turn
 >Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output
->into a new file. You can name it something like `Desk_Tracker_2016_simp.csv`.
+>into a new file using `>` as described in the previous episode. You can name it something like `Desk_Tracker_2016_simp.csv`.
 >> ## Solution
 >> First, let's see where our desired columns are:
 >>
