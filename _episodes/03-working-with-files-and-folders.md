@@ -228,7 +228,7 @@ $ head *.csv
 ~~~
 {: .bash}
 
-> ## More on wildcards
+> ## Wildcards
 > Wildcards are a feature of the shell and will therefore work with *any* command.
 > The shell will expand wildcards to a list of files and/or directories before
 > the command is executed, and the command will never see the wildcards.
@@ -240,7 +240,7 @@ $ head *.csv
 
 <!-- Timing: Spent 75 minutes to get here -->
 
-### Moving, copying and deleting files
+### Moving, Copying and Deleting files
 
 We may also want to change the file name to something more descriptive.
 We can **move** it to a new name by using the `mv` or move command,
