@@ -480,8 +480,6 @@ Type (text), Question Type, Question Type (text)
 >~~~
 >wc -l *.csv | sort -n | head -n 1
 >~~~
->{: .bash}
->
 >
 > Now let's change the scenario. Let's say we have a whole collection of files, and 
 > we want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the 
@@ -504,7 +502,7 @@ Type (text), Question Type, Question Type (text)
 {: .challenge}
 
 
-> ## Counting number of files, part I
+> ## Counting number of files
 > Let's make a different pipeline. You want to find out how many files and
 > directories there are in the current directory. Try to see if you can pipe
 > the output from `ls` into `wc` to find the answer, or something close to the
@@ -577,3 +575,75 @@ Type (text), Question Type, Question Type (text)
 > > {: .output}
 > {: .solution}
 {: .challenge}
+
+### Using a Loop to Count Words
+
+We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
+
+~~~
+$ mv pg514.txt littlewomen.txt
+~~~
+
+This renames the file to something easier to type.
+
+Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each girl's name,
+and count the number of times it appears. The results will print to the screen.
+
+~~~
+$ for name in "Jo" "Meg" "Beth" "Amy"
+> do
+>    echo "$name"
+>    grep -wo "$name" littlewomen.txt | wc -l
+> done
+~~~
+
+{: .bash}
+
+~~~
+Jo
+1355
+Meg
+683
+Beth
+459
+Amy
+645
+~~~
+{: .output}
+
+What is happening in the loop?  
++ `echo "$name"` is printing the current value of `$name`
++ `grep "$name" littlewomen.txt` finds each line that contains the value stored in `$name`. The `-w` flag finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
++ The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
++ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
+
+> ## Why are the variables double-quoted here?
+>
+> a) In [episode 4]({{ page.root }}{% link _episodes/04-loops.md %}) we learned to
+> use `"$..."` as a safeguard against white-space being misinterpreted.
+> Why _could_ we omit the `"`-quotes in the above example?
+> 
+> b) What happens if you add `"Louisa May Alcott"` to the first line of
+> the loop and remove the `"` from `$name` in the loop's code?
+> 
+>> ## Solutions
+>> 
+>> a) Because we are explicitly listing the names after `in`,
+>> and those contain no white-space. However, for consistency
+>> it's better to use rather once too often than once too rarely.
+>> 
+>> b) Without `"`-quoting `$name`, the last loop will try to execute
+>> `grep Louisa May Alcott littlewomen.txt`. `grep` interprets only the
+>> first word as the search pattern, but `May` and `Alcott` as filenames.
+>> This produces two errors and a possibly untrustworthy count:
+>> ~~~
+>> ...
+>> Louisa May Alcott
+>> grep: May: No such file or directory
+>> grep: Alcott: No such file or directory
+>> 4
+>> ~~~
+>> {: .bash}
+> {: .solution}
+{: .challenge}
+
