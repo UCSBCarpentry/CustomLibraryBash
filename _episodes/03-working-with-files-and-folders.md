@@ -344,7 +344,7 @@ CollabStats_2016.csv	Desk_Tracker_2017.csv	Desk_Tracker_2018.csv	Desk_Tracker_20
 > called `history.txt` that you can later edit. To recall a command from history, enter 
 > `history`. Note the command number, e.g. 2045. Recall the command by entering 
 > `!2045`. This will execute the command.
-{: .challenge}
+{: .callout}
 
 > ## Using the `echo` command
 > The `echo` command simply prints out a text you specify. Try it out: `echo "Library Carpentry is awesome!"`.
