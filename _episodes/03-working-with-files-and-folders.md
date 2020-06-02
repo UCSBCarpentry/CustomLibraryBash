@@ -316,7 +316,7 @@ CollabStats_2016.csv	Desk_Tracker_2017.csv	Desk_Tracker_2018.csv	Desk_Tracker_20
 > {: .solution}
 {: .challenge}
 
-> ## The wildcards and regular expressions
+<!-- > ## The wildcards and regular expressions --!>
 >
 > The `?` wildcard matches one character. The `*` wildcard matches zero or
 > more characters. If you attended the lesson on regular expressions, do you
