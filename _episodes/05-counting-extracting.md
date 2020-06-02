@@ -439,8 +439,11 @@ Type (text), Question Type, Question Type (text)
 {: .challenge}
 
 
-> ## Count, sort and print (faded example)
->To count the total lines in every `csv` file, sort the results and then print the first line of the file we use the following:
+> ## Count, sort and print
+> A 'faded example' is a partially solved problem.  Let's build on what we know and fill
+> in the blanks.
+> 
+> To count the total lines in every `csv` file, sort the results and then print the first line of the file we use the following:
 >
 >~~~
 >wc -l *.csv | sort -n | head -n 1
@@ -448,7 +451,8 @@ Type (text), Question Type, Question Type (text)
 >{: .bash}
 >
 >
->Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the 
+> Now let's change the scenario. Let's say we have a whole collection of files, and 
+> We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the 
 >words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts 
 >in ascending order by default).
 >
