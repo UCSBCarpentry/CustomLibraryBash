@@ -366,7 +366,10 @@ programming languages.
 {: .challenge}
 
 
-## Extracting data from DeskTracker
+## Extracting data from our dataset
+ When you receive data it will often contain more columns or variables than you need for your work. If you want to select 
+ only the columns you need for your analysis, you can use the cut command to do so. cut is a tool for extracting sections 
+ from a file.
  For instance, say we want to retain only the `response_set_id`, `date_time`, `Question Type`, and `Contact
  Type` columns from our article data. With `cut` we'd:
 
@@ -389,10 +392,10 @@ programming languages.
 >~~~
 >{: .output}
 >
-> Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can 
-use th$
-> If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those 
-out.
+> Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files 
+> by default. We can use the flag `-d` to change this to a comma or some other delimeter.
+> If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` 
+> to print those out.
 > ### Now your turn
 >Select the columns `response_time_id`, `date_time`, `Contact Type`, `Question Type` and direct the output
 >into a new file using `>` as described in the previous episode. You can name it something like `Desk_Tracker_2016_simp.csv`.
