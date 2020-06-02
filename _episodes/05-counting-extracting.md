@@ -338,6 +338,37 @@ programming languages.
 {: .callout}
 <!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
 
+> ## Writing to files
+> The `date` command outputs the current date and time. Can you write the
+> current date and time to a new file called `logfile.txt`? Then check
+> the contents of the file.
+>
+> > ## Solution
+> > ~~~
+> > $ date > logfile.txt
+> > $ cat logfile.txt
+> > ~~~~
+> > {: .bash}
+> > To check the contents, you could also use `less` or many other commands.
+> >
+> > Beware that `>` will happily overwrite an existing file without warning you,
+> > so please be careful.
+> {: .solution}
+{: .challenge}
+
+> ## Appending to a file
+> While `>` writes to a file, `>>` appends something to a file. Try to append the
+> current date and time to the file `logfile.txt`?
+>
+> > ## Solution
+> > ~~~
+> > $ date >> logfile.txt
+> > $ cat logfile.txt
+> > ~~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
 > ## Adding another pipe
 > We have our `wc -l *.csv | sort -n | head -n 1` pipeline. What would happen
 > if you piped this into `cat`? Try it!
@@ -452,7 +483,7 @@ Type (text), Question Type, Question Type (text)
 >
 >
 > Now let's change the scenario. Let's say we have a whole collection of files, and 
-> We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the 
+> we want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the 
 >words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts 
 >in ascending order by default).
 >
@@ -490,37 +521,6 @@ Type (text), Question Type, Question Type (text)
 > > but the count will be one too high, since the "total" line from `ls`
 > > is included in the count. We'll get back to a way to fix that later
 > > when we've learned about the `grep` command.
-> {: .solution}
-{: .challenge}
-
-> ## Writing to files
-> The `date` command outputs the current date and time. Can you write the
-> current date and time to a new file called `logfile.txt`? Then check
-> the contents of the file.
->
-> > ## Solution
-> > ~~~
-> > $ date > logfile.txt
-> > $ cat logfile.txt
-> > ~~~~
-> > {: .bash}
-> > To check the contents, you could also use `less` or many other commands.
-> >
-> > Beware that `>` will happily overwrite an existing file without warning you,
-> > so please be careful.
-> {: .solution}
-{: .challenge}
-
-> ## Appending to a file
-> While `>` writes to a file, `>>` appends something to a file. Try to append the
-> current date and time to the file `logfile.txt`?
->
-> > ## Solution
-> > ~~~
-> > $ date >> logfile.txt
-> > $ cat logfile.txt
-> > ~~~~
-> > {: .bash}
 > {: .solution}
 {: .challenge}
 
