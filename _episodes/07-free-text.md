@@ -263,7 +263,7 @@ _episodes/05-counting-extracting.md %}).
 
 The second part uses the `sort` command to rearrange the room numbers from its original order into an alphabetical configuration.
 
-The third part uses the 'uniq' command to find the uniq values with a count specified by the `-c` flag.
+The third part uses the `uniq` command to find the uniq values with a count specified by the `-c` flag.
 
 The fourth part sorts the counts in ascending order.
 
