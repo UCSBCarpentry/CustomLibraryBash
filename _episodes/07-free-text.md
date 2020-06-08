@@ -177,6 +177,7 @@ First grab the file from the web.
 ~~~
 $ wget https://www.eastasian.ucsb.edu/people/faculty/
 ~~~
+{: .bash}
 
 Websites are often downloaded through wget as index.html. Let's look at the file.
 
@@ -257,6 +258,7 @@ We can also check how many of the faculty have offices on the same floor of HSSB
 ~~~
 grep -o "HSSB\s*[0-9]" index-lineseparated.txt | sort | uniq -c | sort -n
 ~~~
+{: .bash}
 
 Here we've made extensive use of the pipes we saw in [Counting and extracting with the shell]({{ page.root }}{% link 
 _episodes/05-counting-extracting.md %}).
