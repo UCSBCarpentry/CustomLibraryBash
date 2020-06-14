@@ -96,7 +96,7 @@ $ sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt
 The command `sed` in combination with the `d`
 value will look at `gulliver.txt` and delete all
 values between the rows specified. The `>` action then
-prompts the script to this edited text to the new file specified.
+prompts the script to output this edited text to the new file specified.
 
 ~~~
 $ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
